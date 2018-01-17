@@ -1,2 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+*::-webkit-scrollbar {width: 5px;}
+*::-webkit-scrollbar-track {background: rgba(0, 0, 0, 0.4);}
+*::-webkit-scrollbar-thumb {background: #F08519;}
