@@ -3,10 +3,17 @@ export class user {
     username:string;
     password:string;
     email:string;
-    token:string;
 }
 
 export class login{
     username:string;
     password:string;
+}
+
+export class tokCho{
+    token:string;
+}
+
+export class table{
+    table:string;
 }

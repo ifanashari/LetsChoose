@@ -3,3 +3,14 @@
 *::-webkit-scrollbar {width: 5px;}
 *::-webkit-scrollbar-track {background: rgba(0, 0, 0, 0.4);}
 *::-webkit-scrollbar-thumb {background: #F08519;}
+
+.list-group{border-radius: 0 !important;}
+.list-group-item{border-radius: 0 !important;}
+.form-control{border-radius: 0 !important;}
+.alert{border-radius: 0 !important;}
+.input-group-addon{border-radius: 0 !important;}
+.btn{border-radius: 0;transition: all.3s}
+.btn-info{background-color: transparent;color: #5bc0de;}
+.btn-warning{background-color: transparent;color: #eea236}
+.btn-success{background-color: transparent;color: #4cae4c}
+.btn-danger{background-color: transparent;color: #d43f3a}

@@ -1,0 +1,37 @@
+
+<div class="container margintop">
+  
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <h1>Hellow People !!</h1>
+    <legend></legend>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ipsam voluptates sapiente 
+      molestias perspiciatis eum quibusdam nulla expedita ut, reiciendis quasi vitae repellat 
+      aliquid laboriosam aspernatur! Veniam dicta suscipit ab.</p>
+  </div>
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    
+    <form method="post" role="form" ngNativeValidate (submit)="login()">
+      <legend><h1>Login Dulu !</h1></legend>
+
+      <div class="form-group">
+        <label for="">Nama Lenkap</label>
+        <input type="text" class="form-control input-lg" placeholder="Input field" 
+        name="username" required [(ngModel)]="model.username">
+      </div>
+
+      <div class="form-group">
+          <label for="">Password</label>
+          <input type="password" class="form-control input-lg" placeholder="Input field" name="password" required
+          name="username" required [(ngModel)]="model.password">
+        </div>
+        
+      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="button" class="btn btn-success" routerLink="/daftar">Daftar</button>
+      
+    </form>
+    <label></label>
+    
+  </div>
+  
+  
+</div>
