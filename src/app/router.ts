@@ -9,10 +9,7 @@ import { DaftarComponent } from './daftar/daftar.component';
 
 export const navRoute:Routes = [
     {path: '', component: MainComponent},
-<<<<<<< HEAD
-    {path: 'dashboard', component: DashboardComponent}
-=======
+    {path: 'dashboard', component: DashboardComponent},
     {path: 'login' , component: LoginComponent},
     {path: 'daftar' , component: DaftarComponent}
->>>>>>> 3ab8a4edd139d13f2e79ca0b3d499c92381dad37
 ]
