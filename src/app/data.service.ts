@@ -36,4 +36,19 @@ export class DataService {
     });
   }
 
+  //admin Hendler
+  loginAdmin(username : string , password:string){
+    return this._http.post("http://localhost/LetsApi/Admin/login.php" , { username: username, password: password })
+    .map(res =>{
+      if (res) {
+        return res.json();
+      }
+    });
+  }
+
+  addAdmin(data){
+    return this._http.post("http://localhost/LetsApi/Admin/insert.php" , data)
+    .map(() => "");
+  }
+
 }

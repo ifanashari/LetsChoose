@@ -1,28 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { login } from '../hen-data';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
-import { login } from '../hen-data';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-buat',
+  templateUrl: './buat.component.html',
+  styleUrls: ['./buat.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class BuatComponent implements OnInit {
 
-  constructor(private route: Router , private datSer: DataService) { }
+  constructor(private datSer:DataService , private route:Router) { }
   perLog:any;
   model = new login();
   baseAse = "../../assets";
+
   ngOnInit() {
+
   }
 
-  login(){
-    this.datSer.loginPerson(this.model.username , this.model.password)
+  loginAdmin(){
+    this.datSer.loginAdmin(this.model.username , this.model.password)
     .subscribe(perLog => {
       this.perLog = perLog;
 
-      if (perLog.id_user) {
+      if (perLog.id_admin) {
         window.alert("Success Login. Ayo milih");
         this.route.navigate(['']);
       }else{

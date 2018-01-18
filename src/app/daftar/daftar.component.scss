@@ -1,3 +1,10 @@
+.baclips{
+    background-color: white;position: relative;z-index: 2;margin-top: 18vh;
+}
 .margintop{
-    margin: 10vh auto;
+    margin:auto;background-color: rgb(54, 133, 206);padding:auto;width: 100%;height: 100vh;position: fixed;
+    z-index: 1;
+    p{
+        position: absolute;bottom: 0;right: 5px;color: rgb(199, 199, 199);
+    }
 }

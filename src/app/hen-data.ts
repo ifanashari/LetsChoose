@@ -5,6 +5,13 @@ export class user {
     email:string;
 }
 
+export class admin{
+    id_admin:number;
+    username:string;
+    password:string;
+    email:string;
+}
+
 export class login{
     username:string;
     password:string;
