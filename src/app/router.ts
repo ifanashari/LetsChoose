@@ -10,7 +10,8 @@ import { BuatComponent } from './buat/buat.component';
 import { BuatAdminComponent } from './buat-admin/buat-admin.component';
 
 export const navRoute:Routes = [
-    {path: '', component: MainComponent},
+    {path: '' , component: MainComponent},
+    {path: 'dashboard', component: DashboardComponent},
     {path: 'login' , component: LoginComponent},
     {path: 'daftar' , component: DaftarComponent},
     {path: 'buat' , component:BuatComponent},
