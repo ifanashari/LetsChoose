@@ -1,0 +1,47 @@
+
+<div class="container margintop">
+  
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <h1>Peraturan dan ketentuan !!</h1>
+    <legend></legend>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+      Cumque perspiciatis iste repellendus consectetur tempora aspernatur incidunt? 
+      Neque accusamus cupiditate aperiam aliquam excepturi, suscipit tenetur cum doloremque 
+      officia repellat perferendis similique?</p>
+  </div>
+  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+    
+    <form method="post" role="form" ngNativeValidate (submit)="addPeserta()">
+      <legend><h1>Daftar Pemilu !</h1></legend>
+    
+      <div class="form-group">
+        <label for="">Nama Lenkap</label>
+        <input type="text" class="form-control" placeholder="Input field" required
+        [(ngModel)]="model.username" name="username">
+      </div>
+
+      <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" class="form-control" placeholder="Input field" required
+        [(ngModel)]="model.password" name="password">
+      </div>
+
+      <div class="form-group">
+        <label for="">Email</label>
+        <input type="email" class="form-control" placeholder="Input field" required
+        [(ngModel)]="model.email" name="email">
+      </div>
+    
+      <button type="submit" class="btn btn-primary">Daftar</button>
+      <button type="button" class="btn btn-warning" routerLink="/login">Login !</button>
+      
+    </form>
+    <label></label>
+    <div class="alert alert-success" *ngIf="logic">
+      <strong>Success</strong> Pendaftaran Berhasil. Silahkan login untuk memilih
+    </div>
+    
+  </div>
+  
+  
+</div>
