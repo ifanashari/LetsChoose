@@ -6,9 +6,13 @@ import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { DaftarComponent } from './daftar/daftar.component';
+import { BuatComponent } from './buat/buat.component';
+import { BuatAdminComponent } from './buat-admin/buat-admin.component';
 
 export const navRoute:Routes = [
     {path: '', component: MainComponent},
     {path: 'login' , component: LoginComponent},
-    {path: 'daftar' , component: DaftarComponent}
+    {path: 'daftar' , component: DaftarComponent},
+    {path: 'buat' , component:BuatComponent},
+    {path: 'buatAdmin' , component:BuatAdminComponent}
 ]

@@ -13,6 +13,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { DaftarComponent } from './daftar/daftar.component';
+import { BuatComponent } from './buat/buat.component';
+import { BuatAdminComponent } from './buat-admin/buat-admin.component';
 
 const routes: Routes = []
 @NgModule({
@@ -22,7 +24,9 @@ const routes: Routes = []
     NavigationComponent,
     MainComponent,
     LoginComponent,
-    DaftarComponent
+    DaftarComponent,
+    BuatComponent,
+    BuatAdminComponent
   ],
   imports: [
     BrowserModule,
