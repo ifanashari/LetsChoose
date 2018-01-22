@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
-*::-webkit-scrollbar {width: 5px;border: none;}
-*::-webkit-scrollbar-track {background: rgba(0, 0, 0, 0.1);border: none;}
-*::-webkit-scrollbar-thumb {background: #F08519;border: none;}
+*::-webkit-scrollbar {width: 5px;}
+*::-webkit-scrollbar-track {background: rgba(black, 0.1);}
+*::-webkit-scrollbar-thumb {background: #001F3F;}
 
 .list-group{border-radius: 0 !important;}
 .list-group-item{border-radius: 0 !important;}
