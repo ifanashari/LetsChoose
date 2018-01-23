@@ -11,12 +11,12 @@ import { BuatAdminComponent } from './buat-admin/buat-admin.component';
 import { PortalComponent } from './portal/portal.component';
 
 export const navRoute:Routes = [
-
     {path: '' , component: MainComponent},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'login' , component: LoginComponent},
     {path: 'daftar' , component: DaftarComponent},
     {path: 'buat' , component:BuatComponent},
     {path: 'buatAdmin' , component:BuatAdminComponent},
-    {path: 'portal' , component:PortalComponent}
+    {path: 'portal' , component:PortalComponent},
+    {path: 'buatAdmin' , component:BuatAdminComponent}
 ]
