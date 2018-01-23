@@ -1,32 +1,48 @@
 <div class="margintop">
 </div>
 <div class="topup">
-  <p>Powered by Framework</p>
+  <p>Powered by Google</p>
 </div>
-<div class="container">
-  <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 
-  col-lg-offset-3 col-md-offset-3 col-sm-offset-2 baclips">
-    
-    <form method="post" role="form" ngNativeValidate (submit)="login()">
-      <legend><h1>Login Dulu !</h1></legend>
-
-      <div class="form-group">
-        <label for="">Nama Lenkap</label>
-        <input type="text" class="form-control input-lg" placeholder="Input field" 
-        name="username" required [(ngModel)]="model.username">
-      </div>
-
-      <div class="form-group">
-          <label for="">Password</label>
-          <input type="password" class="form-control input-lg" placeholder="Input field" name="password" required
-          name="username" required [(ngModel)]="model.password">
+<div class="container blaclips">
+    <div class="login-box">
+        <div class="login-logo">
+          <a><b>Login</b>Dulu!</a>
         </div>
-        
-      <button type="submit" class="btn btn-primary">Login</button>
-      <button type="button" class="btn btn-success" routerLink="/daftar">Daftar</button>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+          <p class="login-box-msg">Masuk Keruangan pemilu</p>
       
-    </form>
-    <label></label>
-    
-  </div>
+          <form method="post" (submit)="login()">
+            <div class="form-group has-feedback">
+              <input type="email" class="form-control" placeholder="Nama Lengkap"
+              [(ngModel)]="model.username" name="username">
+              <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+              <input type="password" class="form-control" placeholder="Password"
+              [(ngModel)]="model.password" name="password">
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+              <!-- /.col -->
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-info">Sign In</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+      
+          <div class="social-auth-links text-center">
+            <p>- OR -</p>
+            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
+              Google+</a>
+          </div>
+          <!-- /.social-auth-links -->
+      
+          <a href="#">Aku kehilangan password</a><br>
+          Belum punya akun<a routerLink="/daftar" class="text-center"> Daftar untuk milih</a>
+      
+        </div>
+        <!-- /.login-box-body -->
+      </div>
 </div>

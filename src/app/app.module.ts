@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { DaftarComponent } from './daftar/daftar.component';
 import { BuatComponent } from './buat/buat.component';
 import { BuatAdminComponent } from './buat-admin/buat-admin.component';
+import { PortalComponent } from './portal/portal.component';
 
 const routes: Routes = []
 @NgModule({
@@ -26,7 +27,8 @@ const routes: Routes = []
     LoginComponent,
     DaftarComponent,
     BuatComponent,
-    BuatAdminComponent
+    BuatAdminComponent,
+    PortalComponent
   ],
   imports: [
     BrowserModule,
