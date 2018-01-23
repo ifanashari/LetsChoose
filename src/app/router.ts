@@ -17,6 +17,5 @@ export const navRoute:Routes = [
     {path: 'daftar' , component: DaftarComponent},
     {path: 'buat' , component:BuatComponent},
     {path: 'buatAdmin' , component:BuatAdminComponent},
-    {path: 'portal' , component:PortalComponent},
-    {path: 'buatAdmin' , component:BuatAdminComponent}
+    {path: 'portal' , component:PortalComponent}
 ]
