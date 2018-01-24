@@ -1,42 +1,53 @@
 <div class="margintop">
-  <p>Powered by Framework</p>
-</div>
-
-<div class="container">
-  <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 
-  col-lg-offset-3 col-md-offset-3 col-sm-offset-2 baclips">
-    
-    <form method="post" role="form" ngNativeValidate (submit)="addPeserta()">
-      <legend><h1>Daftar Pemilu !</h1></legend>
-    
-      <div class="form-group">
-        <label for="">Nama Lenkap</label>
-        <input type="text" class="form-control" placeholder="Input field" required
-        [(ngModel)]="model.username" name="username">
-      </div>
-
-      <div class="form-group">
-        <label for="">Password</label>
-        <input type="password" class="form-control" placeholder="Input field" required
-        [(ngModel)]="model.password" name="password">
-      </div>
-
-      <div class="form-group">
-        <label for="">Email</label>
-        <input type="email" class="form-control" placeholder="Input field" required
-        [(ngModel)]="model.email" name="email">
-      </div>
-    
-      <button type="submit" class="btn btn-primary">Daftar</button>
-      <button type="button" class="btn btn-warning" routerLink="/login">Login !</button>
-      
-    </form>
-    <label></label>
-    <div class="alert alert-success" *ngIf="logic">
-      <strong>Success</strong> Pendaftaran Berhasil. Silahkan login untuk memilih
-    </div>
-    
   </div>
-  
-  
-</div>
+  <div class="topup">
+    <p>Powered by Google</p>
+  </div>
+  <div class="container blaclips">
+      <div class="login-box">
+          <div class="login-logo">
+            <a><b>Daftar</b>Dulu!</a>
+          </div>
+          <!-- /.login-logo -->
+          <div class="login-box-body">
+            <p class="login-box-msg">Anda baru memilih? Daftar dulu</p>
+        
+            <form method="post" (submit)="addPeserta()">
+              <div class="form-group has-feedback">
+                <input type="email" class="form-control" placeholder="Nama Lengkap"
+                [(ngModel)]="model.username" name="username">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="password" class="form-control" placeholder="Password"
+                [(ngModel)]="model.password" name="password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="email" class="form-control" placeholder="Email"
+                [(ngModel)]="model.email" name="email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+              </div>
+              <div class="row">
+                <!-- /.col -->
+                <div class="col-xs-4">
+                  <button type="submit" class="btn btn-primary">Daftar</button>
+                </div>
+                <!-- /.col -->
+              </div>
+            </form>
+        
+            <div class="social-auth-links text-center">
+            </div>
+            <!-- /.social-auth-links -->
+        
+            <a routerLink="/">Kembali ke Landing Page</a><br>
+            Belum punya akun<a routerLink="/daftar" class="text-center"> Daftar untuk milih</a>
+
+            <div class="alert alert-success" *ngIf="logic">
+              <strong>Success</strong> Pendaftaran Berhasil. Silahkan login untuk memilih
+            </div>
+          </div>
+          <!-- /.login-box-body -->
+        </div>
+  </div>

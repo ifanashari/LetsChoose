@@ -1,0 +1,34 @@
+<div class="margintop">
+</div>
+<div class="topup">
+  <p>Powered by Google</p>
+</div>
+<div class="container blaclips">
+    <div class="login-box">
+        <div class="login-logo">
+          <a><b>Token Ruangan</b>Pemilu !</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+          <p class="login-box-msg">Token akan diberikan oleh panitia pemilu</p>
+      
+          <form method="post" (submit)="matchTok()">
+            <div class="form-group has-feedback">
+              <input type="email" class="form-control input-lg" placeholder="Masukkan Token"
+              [(ngModel)]="model.token" name="username">
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+              <!-- /.col -->
+              <div class="col-xs-4">
+                <button type="submit" class="btn btn-info">Masuk Ruangan</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+          <!-- /.social-auth-links -->
+      
+        </div>
+        <!-- /.login-box-body -->
+      </div>
+</div>

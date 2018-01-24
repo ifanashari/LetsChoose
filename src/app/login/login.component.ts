@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
       this.perLog = perLog;
 
       if (perLog.id_user) {
-        window.alert("Success Login. Ayo milih");
-        this.route.navigate(['']);
+        sessionStorage.setItem('nama' , perLog.username);
+        this.route.navigate(['/portal']);
       }else{
         return false;
       }
