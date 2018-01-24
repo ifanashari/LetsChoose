@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-
+  img = "../../assets/image/header.jpg";
   constructor() { }
 
   ngOnInit() {

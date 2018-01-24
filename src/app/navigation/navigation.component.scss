@@ -3,6 +3,16 @@ $pimary: #001F3F;
 $secondary: #00305f;
 $background: #111111;
 $second-background: #2b2b2b;
-.nav-fix{
-    background: $second-background;padding: 10px 0;
+#nav-fix{
+    width: 100%;position: fixed;z-index: 1;
+    #brand{
+        background: $secondary;color: white;
+    }
+    #nav{background: $second-background;}
+    #main-nav{
+        background: $background;color: white;
+        .nav-cont{
+            
+        }
+    }
 }

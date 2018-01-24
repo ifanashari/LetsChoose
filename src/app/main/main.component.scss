@@ -11,9 +11,9 @@ $secondary: #00305f;
             small{color: $secondary;}
         }
         .sign{
-            width: 250px;color: white;margin: 50px auto 0 auto;padding: 10px 0;text-align: center;border-radius: 100px;position: relative;overflow: hidden;background: $secondary;transition: .2s;border: none;
+            width: 250px;color: white;margin: 50px auto 0 auto;padding: 10px 0;text-align: center;border-radius: 100px;position: relative;overflow: hidden;background: $secondary;transition: .2s;border: none;outline: none;
             h3{margin: 0;padding: 0;transition: .2s}
-            .btn-effect{width: 100%;padding: 10px 0;position: absolute;background: $pimary;top: 0;transform: translateY(100%);transition: .2s;}
+            .btn-effect{width: 100%;padding: 10px 0;position: absolute;background: $pimary;top: 0;transform: translateY(100%);transition: .2s;outline: none;}
             &:hover{
                 cursor: pointer;background: rgba($secondary, 0.3);
                 #main-sign{transform: translateY(-150%);}
