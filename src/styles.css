@@ -14,12 +14,4 @@
 .form-control{border-radius: 0 !important;}
 .alert{border-radius: 0 !important;}
 .input-group-addon{border-radius: 0 !important;}
-<<<<<<< HEAD
 .btn{border-radius: 0;transition: all.3s}
-.btn-info{background-color: transparent;color: #5bc0de;}
-.btn-warning{background-color: transparent;color: #eea236}
-.btn-success{background-color: transparent;color: #4cae4c}
-.btn-danger{background-color: transparent;color: #d43f3a}
-=======
-.btn{border-radius: 0 !important;transition: all.3s}
->>>>>>> af7e55b59d46464ffc24c74e08aa22abd8429633

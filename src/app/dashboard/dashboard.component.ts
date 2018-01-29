@@ -8,7 +8,7 @@ declare var $:any;
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  empty = false;
   constructor() { }
 
   ngOnInit() {

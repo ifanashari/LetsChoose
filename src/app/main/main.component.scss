@@ -1,5 +1,5 @@
 $base: "../../assets/image/";
-$pimary: #001F3F;
+$pimary: #132844;
 $secondary: #00305f;
 .jumbotron{
     padding: 25vh 0 0 0;background: url($base + 'header.jpg') no-repeat fixed center; background-size: cover;height: 100vh;
@@ -28,7 +28,7 @@ $secondary: #00305f;
 .started-custom{
     width: 100%;padding: 15px 0;position: relative;overflow: hidden;
     h1{padding: 0 50px;transition: .2s;}
-    .started-effect{width: 100%;height: 100%;position: absolute;z-index: -1;background: url($base + "header.jpg") no-repeat center;background-size: cover;transform: translateX(-100%);transition: .2s;}
+    .started-effect{width: 100%;height: 100%;position: absolute;z-index: -1;background: $pimary;transform: translateX(-100%);transition: .2s;}
     &:hover{
         cursor: pointer;
         h1{color: white;}

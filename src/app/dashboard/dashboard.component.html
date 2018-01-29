@@ -1,39 +1,52 @@
-<app-navigation></app-navigation>
-
-<div class="container">
-    
+<div class="container-fluid">
     <div class="row">
-        <div class="col-xs-10 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2">
-            
-            <div class="jumbotron">
-                <div class="container">
-                    <h1>Hello, world!</h1>
-                    <p>Contents ...</p>
-                    <p>
-                        <a class="btn btn-primary btn-lg">Learn more</a>
-                    </p>
-                </div>
+        <app-navigation></app-navigation>
+        <div class="col-xs-12 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2">
+            <div class="empty text-center" *ngIf="empty">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                <p>
+                    Ruang masih kosong 
+                </p>
+                <button type="button" class="btn btn-primary">Buat ruang sekarang</button>
             </div>
             
-            <div class="jumbotron">
-                <div class="container">
-                    <h1>Hello, world!</h1>
-                    <p>Contents ...</p>
-                    <p>
-                        <a class="btn btn-primary btn-lg">Learn more</a>
-                    </p>
+            <div class="row" *ngIf="empty">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="room">
+                        
+                        <div class="page-header">
+                            <h1>
+                                Room 1 <br>
+                                <small>e5vCrJtGBA</small>
+                            </h1>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo vitae asperiores ratione unde magni quidem deserunt 
+                            provident architecto, vel neque nesciunt blanditiis reiciendis ex? Odio voluptatibus ullam incidunt nulla eius!
+                        </p>
+                        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="jumbotron">
-                <div class="container">
-                    <h1>Hello, world!</h1>
-                    <p>Contents ...</p>
-                    <p>
-                        <a class="btn btn-primary btn-lg">Learn more</a>
-                    </p>
+
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="room">        
+                        <div class="page-header">
+                            <h1>
+                                Room 1 <br>
+                                <small>e5vCrJtGBA</small>
+                            </h1>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo vitae asperiores ratione unde magni quidem deserunt 
+                            provident architecto, vel neque nesciunt blanditiis reiciendis ex? Odio voluptatibus ullam incidunt nulla eius!
+                        </p>
+                        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                    </div>
                 </div>
+
             </div>
+
+            <app-ruang></app-ruang>
             
         </div>
     </div>
