@@ -14,4 +14,4 @@
 .form-control{border-radius: 0 !important;}
 .alert{border-radius: 0 !important;}
 .input-group-addon{border-radius: 0 !important;}
-.btn{border-radius: 0;transition: all.3s}
+.btn{border-radius: 0 !important;transition: all.3s}

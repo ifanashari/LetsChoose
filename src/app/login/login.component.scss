@@ -16,3 +16,17 @@
         color: white;
     }
 }
+.frameart{
+    width: 100%;height: 100%;position: fixed;z-index: 4 !important;background-color: rgba(5, 5, 5, 0.829);
+    padding-top: 20vh;
+}
+.fillart{
+    background-color: white;padding:20px;
+    h1{
+        color: black;font-size: 30px;
+    }
+}
+.loadbar{
+    width: 100%;height: 100%;position: fixed;z-index: 4 !important;background-color: rgba(5, 5, 5, 0.929);
+    padding-top: 33vh;
+}
