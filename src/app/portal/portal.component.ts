@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 //api service
 import { AuthService } from 'angularx-social-login';
-import { GoogleLoginProvider } from 'angularx-social-login';
+import { GoogleLoginProvider ,FacebookLoginProvider } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
 
 @Component({
