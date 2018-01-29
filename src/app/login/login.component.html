@@ -1,9 +1,58 @@
+<!-- Failname -->
+<div class="container loadbar" *ngIf="(logic == 'load')">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 text-center">
+    <img src="{{baseUrl}}/img/Ripple.gif" alt="load">
+    <p style="color:white">Loading...</p>
+  </div>
+</div>
+
+
+<!-- Failname -->
+<div class="container frameart" *ngIf="(logic == 'Wname')">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+    <h1>Maaf anda tidak terdaftar. Silahkan Daftar</h1>
+    <p>Please Contact your Admin</p>
+    <div style="margin:40px 0;"></div>
+    <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
+  </div>
+</div>
+
+<!-- Failpassword -->
+<div class="container frameart" *ngIf="(logic == 'Wpass')">
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+  <h1 style="color: red;">Oops!! Password Kamu Salah</h1>
+  <p>Please Contact your Admin</p>
+  <div style="margin:40px 0;"></div>
+  <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
+</div>
+</div>
+
+<!-- Failconnect -->
+<div class="container frameart" *ngIf="(logic == 'ErrConn')">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+    <h1 style="color: red;">Oops!! Your lost Connection</h1>
+    <p>Please Try again Latter</p>
+    <div style="margin:40px 0;"></div>
+    <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
+  </div>
+</div>
+
+<!-- Success -->
+<div class="container frameart" *ngIf="(logic == 'logged')">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+    <h1 style="color: rgb(0, 214, 0);">Success!! Welcome {{user.name}}</h1>
+    <p>Enjoy Our Featurs</p>
+    <div style="margin:40px 0;"></div>
+  </div>
+</div>
+
+
 <div class="margintop">
 </div>
 <div class="topup">
   <p>Powered by Google</p>
 </div>
-<div class="container blaclips">
+<div class="container blaclips"  *ngIf="(logic == 'noLog')">
     <div class="login-box">
         <div class="login-logo">
           <a><b>Login</b>Dulu!</a>
@@ -34,8 +83,12 @@
       
           <div class="social-auth-links text-center">
             <p>- OR -</p>
-            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-              Google+</a>
+            <button class="btn btn-block btn-social btn-google btn-flat" (click)="signInGoogle()">
+              <i class="fa fa-google-plus"></i> Sign in using
+              Google+</button>
+            <button class="btn btn-block btn-social btn-facebook btn-flat" (click)="signInFacebook()">
+              <i class="fa fa-facebook"></i> Sign in using
+              Facebook</button>
           </div>
           <!-- /.social-auth-links -->
       
