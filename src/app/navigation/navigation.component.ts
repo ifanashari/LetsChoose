@@ -23,6 +23,7 @@ export class NavigationComponent implements OnInit {
 
   logOut(){
     sessionStorage.removeItem('admin-name');
+    sessionStorage.removeItem('admin-id');
     sessionStorage.removeItem('admin');
     sessionStorage.clear();
     this.router.navigate(['/loginAdmin']);

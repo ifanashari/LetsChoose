@@ -56,9 +56,19 @@ export class DataService {
     return this._http.post('http://localhost:100/LetsApi/Admin/addruang.php' , data)
       .map(() => "");
   }
-  showRuang(id){
+  showRuang(){
     return this._http.get('http://localhost:100/LetsApi/Admin/showruang.php')
-      .map(res => res.json());
+      .map(res =>{
+
+        this.checkMe = res;
+
+        if (this.checkMe._body !== "0") {
+          return res.json();
+        }else{
+          return false;
+        }
+
+      });
   }
 
 }

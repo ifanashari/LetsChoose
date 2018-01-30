@@ -6,5 +6,19 @@
       </p>
       <button type="button" class="btn btn-primary" routerLink="/dashboard/tambahruang/">Buat ruang sekarang</button>
   </div>
+
+  <div class="row" *ngIf="!empty">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let list of ruang; let i = index">
+            <div class="room">                  
+             <div class="page-header">
+            <h1>
+                 {{list.judul_ruang}} <br>
+                 <small>Token: {{list.token_ruang}}</small>
+            </h1>
+          </div>
+           <p>{{list.deskripsi}}</p>
+           <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+      </div>
+ </div>
   
 </div>

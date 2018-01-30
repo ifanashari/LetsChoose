@@ -22,18 +22,22 @@
       <label for="">Token <span style="color:red">* Perhatian: Simpan Token baik baik</span></label>
       <div class="input-group-btn">
         <button type="button" class="btn btn-primary" (click)="genToken()">Generete</button>
-        <input type="text" class="form-control" disabled value="{{Token}}"
-        [(ngModel)]="ruang.token" name="token" required>
+        <input type="text" class="form-control"
+        [(ngModel)]="ruang.token" name="token" required disabled>
       </div>
       <br>
       <p>Token yang di berikan oleh system akan digunakan sebagai kunci para peserta untuk <br>
         memasuki ruangan pemilu. jangan sampai kehilangan token ini. Catat atau Copy Token tersebut <br>
         untuk diberikan kepada peserta
       </p>
+      <label>Id dari admin: </label>
+      <input type="text" class="form-control"
+        [(ngModel)]="ruang.id_admin" name="id_admin" required disabled>
       <br>
-    <button type="submit" class="btn btn-success">Buat Sekarang</button>
-    <span style="color:rgb(115, 192, 0)" *ngIf="check">Success membuat ruangan pemilu !!</span>
-    </div>      
+      <br> 
+      <button type="submit" class="btn btn-success">Buat Sekarang</button>
+      <span style="color:rgb(115, 192, 0)" *ngIf="check">Success membuat ruangan pemilu !!</span>
+    </div>     
     
   </form>
   

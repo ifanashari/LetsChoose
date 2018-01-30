@@ -30,6 +30,7 @@ export class BuatComponent implements OnInit {
       if (perLog.id_admin) {
         sessionStorage.setItem('admin' , 'good');
         sessionStorage.setItem('admin-name' , perLog.username);
+        sessionStorage.setItem('admin-id' , perLog.id_admin);
         window.alert("Success Login. Ayo milih");
         this.route.navigate(['/dashboard']);
       }else{

@@ -13,6 +13,7 @@ export class RuangComponent implements OnInit {
   ruang = new ruang();
   constructor(private datSer: DataService) {
     this.check = false;
+    this.ruang.id_admin = sessionStorage.getItem('admin-id');
    }
 
   ngOnInit() {
@@ -31,6 +32,7 @@ export class RuangComponent implements OnInit {
 
   genToken(){
     this.Token = this.getToken();
+    this.ruang.token = this.Token;
   }
 
   sendRuang(){
