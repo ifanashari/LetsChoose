@@ -1,38 +1,54 @@
 $base: "../../assets/image/";
-$pimary: #132844;
-$secondary: #00305f;
+$primary: #132844;
+$green: #5cb85c;
+$red: #d9534f;
 .jumbotron{
-    padding: 25vh 0 0 0;background: url($base + 'header.jpg') no-repeat fixed center; background-size: cover;height: 100vh;
+    height: 100vh;padding: 40vh 0 0 0;background: lighten($primary, 10%);
     .container{
         p{color: white;}
-        #image{background: white;width: 100%;height: 200px;}
+        #image{width: 100%;height: 200px;}
         #brand{
-            color: $pimary;
-            small{color: $secondary;}
+            color: lighten($primary, 50%);
+            small{color: white;}
         }
         .sign{
-            width: 250px;color: white;margin: 50px auto 0 auto;padding: 10px 0;text-align: center;border-radius: 100px;position: relative;overflow: hidden;background: $secondary;transition: .2s;border: none;outline: none;
-            h3{margin: 0;padding: 0;transition: .2s}
-            .btn-effect{width: 100%;padding: 10px 0;position: absolute;background: $pimary;top: 0;transform: translateY(100%);transition: .2s;outline: none;}
+            color: white;   
+            h3{
+                i{transition: .2s;}
+            }
+            &:active{outline: none;}
             &:hover{
-                cursor: pointer;background: rgba($secondary, 0.3);
-                #main-sign{transform: translateY(-150%);}
-                .btn-effect{
-                    transform: translateY(0);
+                cursor: pointer;
+                h3{
+                    i{transform: rotate(360deg);}
                 }
             }
         }
     }
 }
 
-.started-custom{
-    width: 100%;padding: 15px 0;position: relative;overflow: hidden;
-    h1{padding: 0 50px;transition: .2s;}
-    .started-effect{width: 100%;height: 100%;position: absolute;z-index: -1;background: $pimary;transform: translateX(-100%);transition: .2s;}
-    &:hover{
-        cursor: pointer;
-        h1{color: white;}
-        .started-effect{transform: translateX(0);}
-    }
 
+.intro{
+    position: relative;overflow: hidden;color: white;padding: 10px;transition: .2s;
+    h1{font-weight: bolder;}
+    h3{font-weight: bolder;}
+    i{position: absolute;top: 0;right: 0;font-size: 100px;color: white;transform: translateX(-10px) translateY(10px);transition: .2s;}
+    &:hover{
+        cursor: pointer;box-shadow: 3px 3px 1px darkgray;
+        // h1{text-shadow: -2px -2px 1px black;}
+        // h3{text-shadow: -2px -2px 1px black;}
+        i{transform: scale(1.3, 1.3) translateX(-20px) translateY(13px);filter: drop-shadow(5px 5px 1px black);}
+    }
+}
+#intro-one{
+    background: lighten($primary, 20%);
+    &:hover{background: lighten($primary, 15%)}
+}
+#intro-two{
+    background: darken($green, 5%);
+    &:hover{background: darken($green, 10%)}
+}
+#intro-three{
+    background: darken($red, 5%);
+    &:hover{background: darken($red, 10%)}
 }

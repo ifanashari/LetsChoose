@@ -46,8 +46,9 @@
 
             </div>
 
-            <app-ruang></app-ruang>
-            
+            <app-ruang *ngIf="empty"></app-ruang>
+            <app-pemilihan></app-pemilihan>
+            <app-hasil *ngIf="empty"></app-hasil>
         </div>
     </div>
     

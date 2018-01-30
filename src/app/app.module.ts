@@ -20,6 +20,8 @@ import { BuatAdminComponent } from './buat-admin/buat-admin.component';
 import { PortalComponent } from './portal/portal.component';
 import { RuangComponent } from './ruang/ruang.component';
 import { Profile } from 'selenium-webdriver/firefox';
+import { PemilihanComponent } from './pemilihan/pemilihan.component';
+import { HasilComponent } from './hasil/hasil.component';
 
 
 let config = new AuthServiceConfig([
@@ -49,7 +51,9 @@ const routes: Routes = []
     BuatComponent,
     BuatAdminComponent,
     PortalComponent,
-    RuangComponent
+    RuangComponent,
+    PemilihanComponent,
+    HasilComponent
   ],
   imports: [
     BrowserModule,

@@ -2,25 +2,37 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                <h1 id="brand">Let's <small>Choose</small></h1>
+                <h1 id="brand">Let's
+                    <small>Choose</small>
+                </h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ducimus alias dolorum accusamus enim? Quaerat velit commodi 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ducimus alias dolorum accusamus enim? Quaerat velit commodi
                     temporibus maxime, odit omnis ipsa optio magnam aliquam pariatur ipsam asperiores quidem excepturi?
                 </p>
             </div>
             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                <div id="image"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="sign" [routerLink]="['login']">
-                <h3 id="main-sign">Log In Here <i class="fa fa-sign-in" aria-hidden="true"></i></h3>
-                <div class="btn-effect">
-                    <h3>Log In Here <i class="fa fa-sign-in" aria-hidden="true"></i></h3>
+                <div id="image">
+
+                    <img [src]="image" class="img-responsive" alt="Image">
+
                 </div>
             </div>
         </div>
-        
+        <div class="row">
+            <div class="sign text-center" [routerLink]="['login']">
+                <h3>
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    Login Here
+                </h3>
+                <!-- <button type="button" class="btn btn-info" [routerLink]="['login']">
+                    <h3>
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Login Here
+                    </h3>
+                </button> -->
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -29,46 +41,44 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="page-header text-center">
-                <h1>Introduction <small>Let's choose</small></h1>
+                <h1>Introduction
+                    <small>Let's choose</small>
+                </h1>
             </div>
         </div>
     </div>
-    
+
     <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <img [src]="image" class="img-responsive" alt="Image">
-            <h2 class="text-center">Akses <small>yang mudah</small></h2>
-            <p>
-                Website kami dapat digunakan semua kalangan dengan tujuan memudahkan pemilihan dimana saja dan
-                kapan saja, agar para pengguna dapat melakukan pemilihan dengan lebih mudah
-            </p>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <h2 class="text-center">Ketepatan <small>data</small></h2>
-            <p>
-                Website kami memberikan fasilitas real time data dimana user dapat melihat hasil dari voting yang 
-                sedang berlangsung dan terus berubah datanya sehingga website kami menyajikan data teraktual
-            </p>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <h2 class="text-center">Mudah <small>digunakan</small></h2>
-            <p>
-                Website ini di desain dengan tampilan yang mudah dipahami oleh pengguna. sehingga pengguna dapat dengan
-                mudah mengunakan website ini untuk melakukan pemilihan 
-            </p>
-        </div>
-      
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="started-custom">
-                    <div class="started-effect"></div>
-                    <h1>Get started <i class="fa fa-arrow-right" aria-hidden="true"></i></h1>
-                </div>                  
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="intro" id="intro-one">
+                <h1>50%</h1>
+                <h3>Data akurat</h3>
+                <!-- <i class="fa fa-database" aria-hidden="true"></i> -->
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
             </div>
         </div>
-        
+
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="intro" id="intro-two">
+                <h1>50%</h1>
+                <h3>Data akurat</h3>
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="intro" id="intro-three">
+                <h1>50%</h1>
+                <h3>Data akurat</h3>
+                <i class="fa fa-handshake-o" aria-hidden="true"></i>
+            </div>
+        </div>
     </div>
-    
 </div>
 
-
+<div class="container-fluid">
+    <footer>
+        <p class="text-center">
+            &copy;LetsChoose Crew | Powered by Google
+        </p>
+    </footer>
+</div>

@@ -1,0 +1,6 @@
+$base: "../../assets/image/";
+$primary: #132844;
+.result-left{
+    background: lighten($primary, 30%);padding: 10px;margin: 15px 0;
+    i{color: white;}
+}
