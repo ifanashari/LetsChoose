@@ -1,4 +1,5 @@
 import { NavigationComponent } from './../navigation/navigation.component';
+import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 
 declare var $:any;
@@ -8,8 +9,11 @@ declare var $:any;
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  empty = false;
-  constructor() { }
+  empty = true;
+  check:string;
+  constructor(private tilSer:Title) {
+    this.tilSer.setTitle('Dashboard Admin');
+   }
 
   ngOnInit() {
     $('.try').on('click', function(){

@@ -51,4 +51,14 @@ export class DataService {
     .map(() => "");
   }
 
+  //addruang
+  addRuang(data){
+    return this._http.post('http://localhost:100/LetsApi/Admin/addruang.php' , data)
+      .map(() => "");
+  }
+  showRuang(id){
+    return this._http.get('http://localhost:100/LetsApi/Admin/showruang.php')
+      .map(res => res.json());
+  }
+
 }

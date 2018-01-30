@@ -1,3 +1,12 @@
+<!-- Failname -->
+<div class="container loadbar" *ngIf="(logic == 'load')">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 text-center">
+      <img src="{{baseUrl}}/img/Rolling-1s-200px.gif" alt="load">
+      <p style="color:white">Loading...</p>
+    </div>
+  </div>
+  
+
 <div class="margintop">
 </div>
 <div class="topup">
@@ -10,7 +19,8 @@
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
-          <p class="login-box-msg">Selamat Datang {{user.name}}</p>
+          <p class="login-box-msg" *ngIf="!status">Selamat Datang {{username}} </p>
+          <p class="login-box-msg" *ngIf="status">Selamat Datang {{user.name}}</p>
           <p class="login-box-msg">Token akan diberikan oleh panitia pemilu</p>
       
           <form method="post" (submit)="matchTok()">

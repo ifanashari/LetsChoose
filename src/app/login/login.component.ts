@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 import { login} from '../hen-data';
@@ -20,8 +21,10 @@ export class LoginComponent implements OnInit {
   protected loggedin:boolean;
   protected logic: string;
 
-  constructor(private route: Router , private datSer: DataService , private authSer: AuthService) { 
+  constructor(private route: Router , private datSer: DataService
+     , private authSer: AuthService , private tilSer:Title) { 
     this.logic = "noLog";
+    this.tilSer.setTitle('Login Ruangan');
   }
   perLog:any;
   model = new login();
@@ -33,6 +36,7 @@ export class LoginComponent implements OnInit {
     });
     TimerObservable.create(0 , 2000).subscribe(() => {  
     if (this.user != null) {
+      sessionStorage.setItem('status' , 'logged');
       this.route.navigate(['/portal']);
     }
   })
@@ -43,7 +47,7 @@ export class LoginComponent implements OnInit {
   }
 
   signInFacebook(): void{
-    this.authSer.signIn(FacebookLoginProvider.PROVIDER_ID);
+    this.authSer.signIn(FacebookLoginProvider.PROVIDER_ID)
   }
 
   signOut(): void{
@@ -63,6 +67,7 @@ export class LoginComponent implements OnInit {
 
       if (perLog.id_user) {
         sessionStorage.setItem('nama' , perLog.username);
+        sessionStorage.setItem('status' , 'logged');
         this.route.navigate(['/portal']);
       }
       else if(perLog == "Fname"){

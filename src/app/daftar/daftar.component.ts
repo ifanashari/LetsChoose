@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title }  from '@angular/platform-browser';
 import { user } from '../hen-data';
 import { DataService } from '../data.service';
 
@@ -10,8 +11,9 @@ import { DataService } from '../data.service';
 export class DaftarComponent implements OnInit {
 
   protected logic:boolean;
-  constructor(private datSer:DataService) { 
+  constructor(private datSer:DataService , private tilSer:Title) { 
     this.logic = false;
+    this.tilSer.setTitle('Daftar Peserta');
   }
   model = new user();
 

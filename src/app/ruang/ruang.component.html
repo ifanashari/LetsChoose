@@ -1,25 +1,40 @@
 
-<div class="row">
-  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+<div class="col-xs-12 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2">
+  <form action="" method="POST" role="form" ngNativeValidate (submit)="sendRuang()">
+    <legend>
+      <h1>LetsChoose <small>The Room</small></h1>
+    </legend>
+  
+    <div class="form-group">
+      <label for="">Nama Ruang</label>
+      <input type="text" class="form-control" placeholder="Pemilihan Ketua RT , Ketua RW , Walikota"
+      [(ngModel)]="ruang.judul_ruang" name="judul_ruang" required>
+    </div>
     
-    <form action="" method="POST" role="form">
-      <legend>
-        <h1>LetsChoose <small>The Room</small></h1>
-      </legend>
+    <div class="form-group">
+      <label class="control-label">Deskripsi Ruangan: </label>
+        <textarea name="deskrip" class="form-control" rows="6" required placeholder="Deskripsi ruangan"
+        [(ngModel)]="ruang.deskripsi" name="deskripsi" ></textarea>
+    </div>
     
-      <div class="form-group">
-        <label for="">Nama Ruang</label>
-        <input type="text" class="form-control" id="" placeholder="Input field">
+    
+    <div class="form-inline">
+      <label for="">Token <span style="color:red">* Perhatian: Simpan Token baik baik</span></label>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-primary" (click)="genToken()">Generete</button>
+        <input type="text" class="form-control" disabled value="{{Token}}"
+        [(ngModel)]="ruang.token" name="token" required>
       </div>
-      
-      <div class="form-group">
-        <label for="">Token</label>
-        <div class="input-group-btn">
-          <button type="button" class="btn btn-primary">Generete</button>
-          <input type="text" class="form-control" id="" placeholder="">
-        </div>
-      </div>
-    </form>
+      <br>
+      <p>Token yang di berikan oleh system akan digunakan sebagai kunci para peserta untuk <br>
+        memasuki ruangan pemilu. jangan sampai kehilangan token ini. Catat atau Copy Token tersebut <br>
+        untuk diberikan kepada peserta
+      </p>
+      <br>
+    <button type="submit" class="btn btn-success">Buat Sekarang</button>
+    <span style="color:rgb(115, 192, 0)" *ngIf="check">Success membuat ruangan pemilu !!</span>
+    </div>      
     
-  </div>
+  </form>
+  
 </div>

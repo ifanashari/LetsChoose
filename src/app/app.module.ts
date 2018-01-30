@@ -20,6 +20,9 @@ import { BuatAdminComponent } from './buat-admin/buat-admin.component';
 import { PortalComponent } from './portal/portal.component';
 import { RuangComponent } from './ruang/ruang.component';
 import { Profile } from 'selenium-webdriver/firefox';
+import { AuthGuard } from './auth-guard';
+import { AuthService } from './auth.service';
+import { DashHomeComponent } from './dash-home/dash-home.component';
 
 
 let config = new AuthServiceConfig([
@@ -41,15 +44,8 @@ const routes: Routes = []
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    NavigationComponent,
-    MainComponent,
-    LoginComponent,
-    DaftarComponent,
-    BuatComponent,
-    BuatAdminComponent,
-    PortalComponent,
-    RuangComponent
+    DashboardComponent,NavigationComponent,MainComponent,LoginComponent,DaftarComponent,
+    BuatComponent,BuatAdminComponent,PortalComponent,RuangComponent, DashHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +54,7 @@ const routes: Routes = []
     SocialLoginModule
   ],
   providers: [
-    {provide:DataService , useClass:DataService},
+    {provide:DataService , useClass:DataService},AuthGuard,AuthService,
     {provide: AuthServiceConfig, useFactory: provideConfig}
   ],
   bootstrap: [AppComponent]
