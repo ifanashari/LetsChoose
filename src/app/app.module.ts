@@ -20,6 +20,8 @@ import { BuatAdminComponent } from './buat-admin/buat-admin.component';
 import { PortalComponent } from './portal/portal.component';
 import { RuangComponent } from './ruang/ruang.component';
 import { Profile } from 'selenium-webdriver/firefox';
+import { PemilihanComponent } from './pemilihan/pemilihan.component';
+import { HasilComponent } from './hasil/hasil.component';
 import { AuthGuard } from './auth-guard';
 import { AuthService } from './auth.service';
 import { DashHomeComponent } from './dash-home/dash-home.component';
@@ -45,6 +47,8 @@ const routes: Routes = []
 @NgModule({
   declarations: [
     AppComponent,
+    PemilihanComponent,
+    HasilComponent,
     DashboardComponent,NavigationComponent,MainComponent,LoginComponent,DaftarComponent,
     BuatComponent,BuatAdminComponent,PortalComponent,RuangComponent, DashHomeComponent, CalonComponent
   ],

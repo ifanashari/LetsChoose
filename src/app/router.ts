@@ -9,6 +9,7 @@ import { DaftarComponent } from './daftar/daftar.component';
 import { BuatComponent } from './buat/buat.component';
 import { BuatAdminComponent } from './buat-admin/buat-admin.component';
 import { PortalComponent } from './portal/portal.component';
+import { PemilihanComponent } from './pemilihan/pemilihan.component';
 import { AuthGuard } from './auth-guard';
 import { RuangComponent } from './ruang/ruang.component';
 import { DashHomeComponent } from './dash-home/dash-home.component';

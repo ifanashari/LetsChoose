@@ -1,0 +1,14 @@
+$base: "../../assets/image/";
+$primary: #132844;
+.calon{
+    padding: 10px;box-shadow: 3px 3px 2px gray;border: thin solid gray;transition: .2s;
+    div{
+        i{font-size: 150px;transition: .2s;}
+    }
+    &:hover{
+        box-shadow: none;cursor: pointer;
+        div{
+            i{filter: drop-shadow(3px 3px 2px gray)}
+        }
+    }
+}
