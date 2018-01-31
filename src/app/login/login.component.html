@@ -1,7 +1,7 @@
 <!-- Failname -->
 <div class="container loadbar" *ngIf="(logic == 'load')">
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 text-center">
-    <img src="{{baseUrl}}/img/Ripple.gif" alt="load">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+    <img src="{{baseUrl}}/img/Rolling-1s-200px.gif" alt="load">
     <p style="color:white">Loading...</p>
   </div>
 </div>
@@ -9,7 +9,7 @@
 
 <!-- Failname -->
 <div class="container frameart" *ngIf="(logic == 'Wname')">
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3 fillart text-center">
     <h1>Maaf anda tidak terdaftar. Silahkan Daftar</h1>
     <p>Please Contact your Admin</p>
     <div style="margin:40px 0;"></div>
@@ -19,7 +19,7 @@
 
 <!-- Failpassword -->
 <div class="container frameart" *ngIf="(logic == 'Wpass')">
-<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3 fillart text-center">
   <h1 style="color: red;">Oops!! Password Kamu Salah</h1>
   <p>Please Contact your Admin</p>
   <div style="margin:40px 0;"></div>
@@ -29,7 +29,7 @@
 
 <!-- Failconnect -->
 <div class="container frameart" *ngIf="(logic == 'ErrConn')">
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3 fillart text-center">
     <h1 style="color: red;">Oops!! Your lost Connection</h1>
     <p>Please Try again Latter</p>
     <div style="margin:40px 0;"></div>
@@ -39,7 +39,7 @@
 
 <!-- Success -->
 <div class="container frameart" *ngIf="(logic == 'logged')">
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 fillart text-center">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3 fillart text-center">
     <h1 style="color: rgb(0, 214, 0);">Success!! Welcome {{user.name}}</h1>
     <p>Enjoy Our Featurs</p>
     <div style="margin:40px 0;"></div>
@@ -61,15 +61,15 @@
         <div class="login-box-body">
           <p class="login-box-msg">Masuk Keruangan pemilu</p>
       
-          <form method="post" (submit)="login()">
+          <form method="post" (submit)="login()" ngNativeValidate>
             <div class="form-group has-feedback">
-              <input type="email" class="form-control" placeholder="Nama Lengkap"
-              [(ngModel)]="model.username" name="username">
+              <input type="text" class="form-control" placeholder="Nama Lengkap"
+              [(ngModel)]="model.username" name="username" required>
               <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
               <input type="password" class="form-control" placeholder="Password"
-              [(ngModel)]="model.password" name="password">
+              [(ngModel)]="model.password" name="password" required>
               <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
@@ -84,16 +84,17 @@
           <div class="social-auth-links text-center">
             <p>- OR -</p>
             <button class="btn btn-block btn-social btn-google btn-flat" (click)="signInGoogle()">
-              <i class="fa fa-google-plus"></i> Sign in using
-              Google+</button>
+              <i class="fa fa-google"></i> Connect With
+              Google</button>
             <button class="btn btn-block btn-social btn-facebook btn-flat" (click)="signInFacebook()">
-              <i class="fa fa-facebook"></i> Sign in using
+              <i class="fa fa-facebook"></i> Connect With
               Facebook</button>
           </div>
           <!-- /.social-auth-links -->
       
           <a href="#">Aku kehilangan password</a><br>
-          Belum punya akun<a routerLink="/daftar" class="text-center"> Daftar untuk milih</a>
+          Belum punya akun<a routerLink="/daftar" class="text-center"> Daftar untuk milih</a> <br>
+          <a routerLink="/">Kembali ke awal</a><br>
       
         </div>
         <!-- /.login-box-body -->

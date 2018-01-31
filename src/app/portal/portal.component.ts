@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 
 //api service
 import { AuthService } from 'angularx-social-login';
-import { GoogleLoginProvider } from 'angularx-social-login';
+import { GoogleLoginProvider ,FacebookLoginProvider } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
+import { TimerObservable } from 'rxjs/observable/TimerObservable';
 
 @Component({
   selector: 'app-portal',
@@ -15,24 +16,50 @@ import { SocialUser } from 'angularx-social-login';
 export class PortalComponent implements OnInit {
   user: SocialUser;
   private loggedin:boolean;
+  protected logic: string;
+  baseUrl = "../../assets";
+  status:boolean;
+  username:string;
 
-  constructor(private authSer: AuthService , private router: Router) { }
+  constructor(private authSer: AuthService , private router: Router) { 
+    this.username = sessionStorage.getItem('nama');
+  }
 
   model = new tokCho();
 
   ngOnInit() {
-    this.authSer.authState.subscribe((user) => {
-      this.user = user;
-    });
+    
+    if (this.username) {
+      this.status = false;
+    }else{
+      this.authSer.authState.subscribe((user) => {
+        this.user = user;
+        this.status = true;
+      });
+    }
   }
 
   matchTok(){
-    
+
   }
 
   logOutSocial(){
-    this.authSer.signOut();
-    this.router.navigate(['/login']);
+    this.showLoad();
+    sessionStorage.removeItem('status');
+    sessionStorage.removeItem('nama');
+
+    //if else e
+    if (this.user) {
+      this.authSer.signOut().then(() => {
+        this.router.navigate(['/login']);
+      });
+    }else{
+      this.router.navigate(['/login']);
+    }
+  }
+
+  showLoad(){
+    this.logic = "load";
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { login } from '../hen-data';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
@@ -10,7 +11,9 @@ import { Router } from '@angular/router';
 })
 export class BuatComponent implements OnInit {
 
-  constructor(private datSer:DataService , private route:Router) { }
+  constructor(private datSer:DataService , private route:Router , private tilSer:Title) {
+    this.tilSer.setTitle('Login Admin');
+   }
   perLog:any;
   model = new login();
   baseAse = "../../assets";
@@ -25,8 +28,11 @@ export class BuatComponent implements OnInit {
       this.perLog = perLog;
 
       if (perLog.id_admin) {
+        sessionStorage.setItem('admin' , 'good');
+        sessionStorage.setItem('admin-name' , perLog.username);
+        sessionStorage.setItem('admin-id' , perLog.id_admin);
         window.alert("Success Login. Ayo milih");
-        this.route.navigate(['']);
+        this.route.navigate(['/dashboard']);
       }else{
         return false;
       }

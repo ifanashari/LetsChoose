@@ -21,6 +21,13 @@ export class tokCho{
     token:string;
 }
 
+export class ruang {
+    token:string;
+    judul_ruang:string;
+    deskripsi:string;
+    id_admin:string;
+}
+
 export class table{
     table:string;
 }

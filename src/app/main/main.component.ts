@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   image = "../../assets/image/logoproject2.png";
-  constructor() { }
+  constructor(private tilSer:Title) {
+    this.tilSer.setTitle("LetsChoices");
+   }
 
   ngOnInit() {
   }
