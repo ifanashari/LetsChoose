@@ -1,0 +1,64 @@
+<div class="col-xs-12 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 
+col-md-offset-2 col-lg-10 col-lg-offset-2">
+    
+    <h1>Ruangan: {{ruang.judul_ruang}}</h1>
+    
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <td>ID Ruangan:</td> <td>{{ruang.id_ruang}}</td>
+        </tr>
+
+        <tr>
+          <td>Token Ruangan:</td> <td>{{ruang.token_ruang}}</td>
+        </tr>
+
+        <tr>
+          <td>Deskripsi:</td> <td>{{ruang.deskripsi}}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <button type="button" class="btn btn-success">Tambah Calon Pemilu</button>
+    
+    
+    <form action="" method="POST" role="form" ngNativeValidate *ngIf="edit">
+    
+      <div class="form-group">
+        <label for="">Nama Ruang</label>
+        <input type="text" class="form-control" placeholder="Pemilihan Ketua RT , Ketua RW , Walikota"
+        [(ngModel)]="ruang.judul_ruang" name="judul_ruang" required>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label">Deskripsi Ruangan: </label>
+          <textarea name="deskrip" class="form-control" rows="6" required placeholder="Deskripsi ruangan"
+          [(ngModel)]="ruang.deskripsi" name="deskripsi" ></textarea>
+      </div>
+      
+      
+      <div class="form-inline">
+        <label for="">Token <span style="color:red">* Perhatian: Simpan Token baik baik</span></label>
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-primary" (click)="genToken()">Generete</button>
+          <input type="text" class="form-control"
+          [(ngModel)]="ruang.token_ruang" name="token" required disabled>
+        </div>
+        <br>
+        <p>Token yang di berikan oleh system akan digunakan sebagai kunci para peserta untuk <br>
+          memasuki ruangan pemilu. jangan sampai kehilangan token ini. Catat atau Copy Token tersebut <br>
+          untuk diberikan kepada peserta
+        </p>
+        <label>Id dari admin: </label>
+        <input type="text" class="form-control"
+          [(ngModel)]="ruang.id_admin" name="id_admin" required disabled>
+        <br>
+        <br> 
+        <button type="submit" class="btn btn-success">Ubah Informasi</button>
+        <span style="color:rgb(115, 192, 0)" *ngIf="check">Success Mengubah informasi ruangan pemilu !!</span>
+      </div>     
+      
+    </form>
+
+    
+</div>

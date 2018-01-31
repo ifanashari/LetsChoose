@@ -23,6 +23,7 @@ import { Profile } from 'selenium-webdriver/firefox';
 import { AuthGuard } from './auth-guard';
 import { AuthService } from './auth.service';
 import { DashHomeComponent } from './dash-home/dash-home.component';
+import { CalonComponent } from './calon/calon.component';
 
 
 let config = new AuthServiceConfig([
@@ -45,7 +46,7 @@ const routes: Routes = []
   declarations: [
     AppComponent,
     DashboardComponent,NavigationComponent,MainComponent,LoginComponent,DaftarComponent,
-    BuatComponent,BuatAdminComponent,PortalComponent,RuangComponent, DashHomeComponent
+    BuatComponent,BuatAdminComponent,PortalComponent,RuangComponent, DashHomeComponent, CalonComponent
   ],
   imports: [
     BrowserModule,

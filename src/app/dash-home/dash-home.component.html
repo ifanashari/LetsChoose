@@ -8,8 +8,8 @@
   </div>
 
   <div class="row" *ngIf="!empty">
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let list of ruang; let i = index">
-            <div class="room">                  
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let list of ruang; let i = index;">
+            <div class="room" [style.background-color]="getColor(i)" routerLink="/dashboard/isiruangan/{{list.id_ruang}}">
              <div class="page-header">
             <h1>
                  {{list.judul_ruang}} <br>

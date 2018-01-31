@@ -12,6 +12,7 @@ import { PortalComponent } from './portal/portal.component';
 import { AuthGuard } from './auth-guard';
 import { RuangComponent } from './ruang/ruang.component';
 import { DashHomeComponent } from './dash-home/dash-home.component';
+import { CalonComponent } from './calon/calon.component';
 
 
 export const navRoute:Routes = [
@@ -20,7 +21,8 @@ export const navRoute:Routes = [
         path: 'dashboard', component: DashboardComponent,
         children: [
             {path: '' , component:DashHomeComponent },
-            {path: 'tambahruang' , component:RuangComponent }
+            {path: 'tambahruang' , component:RuangComponent },
+            {path: 'isiruangan/:id' , component:CalonComponent }
         ]
     },
     {path: 'login' , component: LoginComponent},

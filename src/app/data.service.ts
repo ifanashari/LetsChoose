@@ -71,4 +71,9 @@ export class DataService {
       });
   }
 
+  showRuangOne(id){
+    return this._http.post('http://localhost:100/LetsApi/Admin/showoner.php' , {'id' : id })
+      .map(res => res.json());
+    }
+
 }

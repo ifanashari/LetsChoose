@@ -32,7 +32,7 @@ export class RuangComponent implements OnInit {
 
   genToken(){
     this.Token = this.getToken();
-    this.ruang.token = this.Token;
+    this.ruang.token_ruang = this.Token;
   }
 
   sendRuang(){

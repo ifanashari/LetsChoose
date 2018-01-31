@@ -9,6 +9,12 @@ import { DataService } from '../data.service';
 export class DashHomeComponent implements OnInit {
   empty = true;
   ruang: any;
+  randColor = [
+    '#1153aa' , '#11aa1e' , '#f13737' , '#bc37f1' , '#c27510',
+    '#1153aa' , '#11aa1e' , '#f13737' , '#bc37f1' , '#c27510',
+    '#1153aa' , '#11aa1e' , '#f13737' , '#bc37f1' , '#c27510',
+    '#1153aa' , '#11aa1e' , '#f13737' , '#bc37f1' , '#c27510'
+  ];
   constructor(private datSer:DataService) { }
 
   ngOnInit() {
@@ -26,6 +32,10 @@ export class DashHomeComponent implements OnInit {
         this.empty = true;
       }
     })
+  }
+
+  getColor(sam){
+    return this.randColor[sam];
   }
 
 }
