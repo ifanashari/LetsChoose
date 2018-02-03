@@ -13,6 +13,7 @@ import { PemilihanComponent } from './pemilihan/pemilihan.component';
 import { AuthGuard } from './auth-guard';
 import { RuangComponent } from './ruang/ruang.component';
 import { DashHomeComponent } from './dash-home/dash-home.component';
+import { HasilComponent } from './hasil/hasil.component';
 
 
 export const navRoute:Routes = [
@@ -28,5 +29,6 @@ export const navRoute:Routes = [
     {path: 'daftar' , component: DaftarComponent},
     {path: 'loginAdmin' , component:BuatComponent},
     {path: 'buatAdmin' , component:BuatAdminComponent},
+    {path: 'hasil' , component:HasilComponent},
     {path: 'portal' , component:PortalComponent , canActivate: [AuthGuard]}
 ]
