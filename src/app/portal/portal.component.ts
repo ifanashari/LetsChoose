@@ -14,9 +14,9 @@ import { TimerObservable } from 'rxjs/observable/TimerObservable';
   styleUrls: ['./portal.component.scss']
 })
 export class PortalComponent implements OnInit {
-  user: SocialUser;
+  orang: SocialUser;
   private loggedin:boolean;
-  protected logic: string;
+  public logic: string;
   baseUrl = "../../assets";
   status:boolean;
   username:string;
@@ -32,8 +32,8 @@ export class PortalComponent implements OnInit {
     if (this.username) {
       this.status = false;
     }else{
-      this.authSer.authState.subscribe((user) => {
-        this.user = user;
+      this.authSer.authState.subscribe(orang => {
+        this.orang = orang;
         this.status = true;
       });
     }
@@ -49,7 +49,7 @@ export class PortalComponent implements OnInit {
     sessionStorage.removeItem('nama');
 
     //if else e
-    if (this.user) {
+    if (this.orang) {
       this.authSer.signOut().then(() => {
         this.router.navigate(['/login']);
       });

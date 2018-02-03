@@ -8,7 +8,7 @@ import { Router } from '@angular/router/';
 })
 export class NavigationComponent implements OnInit {
   img = "../../assets/image/logoproject2.png";
-  protected useradmin:string;
+  public useradmin:string;
   constructor(private router: Router) {
     this.useradmin = sessionStorage.getItem('admin-name');
   }

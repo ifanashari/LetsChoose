@@ -10,7 +10,7 @@ import { DataService } from '../data.service';
 })
 export class DaftarComponent implements OnInit {
 
-  protected logic:boolean;
+  logic:boolean;
   constructor(private datSer:DataService , private tilSer:Title) { 
     this.logic = false;
     this.tilSer.setTitle('Daftar Peserta');

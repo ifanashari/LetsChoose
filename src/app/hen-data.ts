@@ -29,6 +29,15 @@ export class ruang {
     id_admin:string;
 }
 
+export class calon {
+    id_calon:string;
+    nama_calon:string;
+    deskripsi:string;
+    riwayat_hidup:string;
+    photo:string;
+    id_ruang:string;
+}
+
 export class table{
     table:string;
 }

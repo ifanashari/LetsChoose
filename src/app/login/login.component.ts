@@ -18,8 +18,8 @@ import { GoogleLoginProvider , FacebookLoginProvider } from 'angularx-social-log
 export class LoginComponent implements OnInit {
   
   user: SocialUser;
-  protected loggedin:boolean;
-  protected logic: string;
+  loggedin:boolean;
+  public logic: string;
 
   constructor(private route: Router , private datSer: DataService
      , private authSer: AuthService , private tilSer:Title) { 
