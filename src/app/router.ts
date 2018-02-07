@@ -33,5 +33,6 @@ export const navRoute:Routes = [
     {path: 'buatAdmin' , component:BuatAdminComponent},
     {path: 'hasil' , component:HasilComponent},
     {path: 'portal' , component:PortalComponent , canActivate: [AuthGuard]},
+    {path: 'pemilihan' , component:PemilihanComponent , canActivate: [AuthGuard]},
     {path: '**', component: MainComponent }
 ]

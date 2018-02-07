@@ -31,7 +31,7 @@ import { CalonComponent } from './calon/calon.component';
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("122417077830-470l9t8q7k8i9hif7us2c3d7b5sevp4e.apps.googleusercontent.com")
+    provider: new GoogleLoginProvider("419439473754-nrt5job6jbeirngd0g4mf4j3cfa5ojhe.apps.googleusercontent.com")
   },
   {
     id: FacebookLoginProvider.PROVIDER_ID,

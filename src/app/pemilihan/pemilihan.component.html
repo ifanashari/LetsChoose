@@ -1,56 +1,42 @@
-<div class="row">
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-    <div class="calon">
-      <div class="text-center">
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-      </div>
-      <div class="page-header">
-        <h1>Nama
-          <small>subtext</small>
-        </h1>
-      </div>
-      <!-- ________________|_Deskripsi_|________________ -->
-      <p class="text-center">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, enim tempora. Ab, beatae? Mollitia quisquam sapiente
-        maiores cumque. Odio porro nostrum, accusantium cum temporibus ullam? Porro voluptatum dolor repellat vitae!
-      </p>
-    </div>
-  </div>
+<div class="container">
 
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-    <div class="calon">
-      <div class="text-center">
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-      </div>
-      <div class="page-header">
-        <h1>Nama
-          <small>subtext</small>
-        </h1>
-      </div>
-      <!-- ________________|_Deskripsi_|________________ -->
-      <p class="text-center">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, enim tempora. Ab, beatae? Mollitia quisquam sapiente
-        maiores cumque. Odio porro nostrum, accusantium cum temporibus ullam? Porro voluptatum dolor repellat vitae!
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h1 class="text-center">Pilih Candidat</h1>
+      <p class="text-center">Anda hanya dapat memilih sekali saja, Perhatikan pilihan anda. Pilihlah yang tepat sesua
+        hati anda
       </p>
-    </div>
-  </div>
+      <legend></legend>
+      <h1>Ruang: {{ruang.judul_ruang}}</h1>
+      <p>Token Ruang: {{ruang.token_ruang}}</p>
+      <p>Deskripsi Ruang: {{ruang.deskripsi}}</p>
 
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-    <div class="calon">
-      <div class="text-center">
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-      </div>
-      <div class="page-header">
-        <h1>Nama
-          <small>subtext</small>
-        </h1>
-      </div>
-      <!-- ________________|_Deskripsi_|________________ -->
-      <p class="text-center">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, enim tempora. Ab, beatae? Mollitia quisquam sapiente
-        maiores cumque. Odio porro nostrum, accusantium cum temporibus ullam? Porro voluptatum dolor repellat vitae!
-      </p>
     </div>
-  </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" *ngFor="let calon of cabalon">
+      <div class="calon">
+        <div class="text-center">
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        </div>
+        <div class="page-header">
+          <h1>{{calon.nama_calon}}</h1>
+        </div>
+        <!-- ________________|_Deskripsi_|________________ -->
+          <div class="b-scrol">
+            <p>
+              <label>Id Calon: </label>{{calon.id_calon}}
+            </p>
+            <label>Riwayat Hidup</label>
+            <p>
+              {{calon.riwayat_hidup}}
+            </p>
+            <label>Deskripsi</label>
+            <p>
+              {{calon.deskripsi}}
+            </p>
+          </div>
+      </div>
+    </div>
 
+  </div>
 </div>
+<label for=""></label>
