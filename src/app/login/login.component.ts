@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   
   user: SocialUser;
   loggedin:boolean;
+
   public logic: string;
 
   constructor(private route: Router , private datSer: DataService

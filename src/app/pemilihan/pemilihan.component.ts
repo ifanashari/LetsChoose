@@ -17,6 +17,12 @@ export class PemilihanComponent implements OnInit{
   ruang = new ruang();
   calon = new calon();
   cabalon:any;
+  randColor = [
+    '#1153aa', '#11aa1e', '#f13737', '#bc37f1', '#c27510',
+    '#1153aa', '#11aa1e', '#f13737', '#bc37f1', '#c27510',
+    '#1153aa', '#11aa1e', '#f13737', '#bc37f1', '#c27510',
+    '#1153aa', '#11aa1e', '#f13737', '#bc37f1', '#c27510'
+  ];
   private id_ruang = sessionStorage.getItem('ruang');
   id:string;
   constructor(private datSer: DataService , private authSer: AuthService , private router: Router) {
@@ -37,6 +43,9 @@ export class PemilihanComponent implements OnInit{
     this.datSer.showCalon(this.id).subscribe(cabalon => {
       this.cabalon = cabalon;
     })
+  }
+  getColor(sam){
+    this.randColor[sam];
   }
 
   logOut(){
