@@ -24,6 +24,7 @@ col-md-offset-2 col-lg-10 col-lg-offset-2">
   </table>
 
   <button type="button" class="btn btn-success" (click)="openEdit()">Edite Informasi Ruangan</button>
+  <button type="button" class="btn btn-danger" (click)="deleteRuang(ruang.id_ruang)">Hapus Ruangan</button>
 
   <div *ngIf="!plusCalon && !edit">
     <h1>Daftar
@@ -54,6 +55,8 @@ col-md-offset-2 col-lg-10 col-lg-offset-2">
             {{calon.deskripsi}}
           </p>
         </div>
+        <button type="button" class="btn btn-danger" (click)="deleteCalon(calon.id_calon)">Hapus Calon</button>
+        
       </div>
     </div>
 
@@ -126,8 +129,10 @@ col-md-offset-2 col-lg-10 col-lg-offset-2">
       <textarea name="deskripsi" class="form-control" rows="6" required placeholder="Beliau Seorang" [(ngModel)]="calon.riwayat_hidup"
         name="deskripsi"></textarea>
     </div>
-    <img [src]="url" class="img-responsive" *ngIf="checkUrl">
-    <div class="form-group">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+      <img [src]="url" class="img-responsive" *ngIf="checkUrl">
+    </div>
+    <div class="form-group" style="clear:both">
       <label for="">Masukkan Foto</label>
       <input type="file" class="form-control" [(ngModel)]="calon.photo" name="photo" required (change)="getPhoto($event)">
     </div>
@@ -137,7 +142,7 @@ col-md-offset-2 col-lg-10 col-lg-offset-2">
     <br>
     <button type="submit" class="btn btn-success">Tambah Calon</button>
     <button type="button" class="btn btn-danger" (click)="closePlus()">Kembali</button>
-    <span style="color:rgb(25, 29, 19)" *ngIf="check">Success Mengubah informasi ruangan pemilu !!</span>
+    <span style="color:rgb(25, 29, 19)" *ngIf="check">Success Menambah Calon pemilu !!</span>
 
   </form>
 

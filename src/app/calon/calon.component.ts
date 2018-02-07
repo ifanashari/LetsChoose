@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
 import { ruang, calon } from '../hen-data';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-calon',
@@ -19,7 +20,9 @@ export class CalonComponent implements OnInit {
    checkUrl:boolean;
   url:any;
 
-  constructor(private router: Router , private route: ActivatedRoute , private datSer: DataService) { 
+  constructor(
+    private router: Router , private route: ActivatedRoute , private datSer: DataService
+  ) { 
     this.edit = false;
     this.plusCalon = false;
     this.check = false;
@@ -44,9 +47,10 @@ export class CalonComponent implements OnInit {
   }
 
   addCalon(){
-    this.datSer.addCalon(this.calon).subscribe(() => {
-      this.check = true;
-    });
+    console.log(this.calon);
+    // this.datSer.addCalon(this.calon).subscribe(() => {
+    //   this.check = true;
+    // });
   }
 
   getToken(){
@@ -68,6 +72,7 @@ export class CalonComponent implements OnInit {
   getPhoto(event:any){
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
+      let fD = new FormData()
   
       reader.onload = (event:any) => {
         this.url = event.target.result;
@@ -75,6 +80,7 @@ export class CalonComponent implements OnInit {
       }
   
       reader.readAsDataURL(event.target.files[0]);
+      this.calon.photo = fD.append('file' , event.target.files[0]);
     }
   }
 
@@ -91,6 +97,24 @@ export class CalonComponent implements OnInit {
     })
   }
 
+  deleteCalon(id_calon){
+    this.datSer.deletedCalon(id_calon).subscribe(() => {
+      this.getCalon();
+    })
+  }
+
+  deleteRuang(id_ruang){
+    var r = confirm("Yakin mau hapus?");
+    if (r == true) {
+      this.datSer.deletedRuang(id_ruang).subscribe(() => {
+        this.router.navigate(['/dashboard']);
+      });
+    }else{
+      
+    }
+  }
+
+  //other
   openEdit(){
     this.edit = true;
     this.plusCalon = false;
@@ -103,9 +127,9 @@ export class CalonComponent implements OnInit {
     this.plusCalon = true;
   }
   closePlus(){
+    this.getCalon();
     this.plusCalon = false;
   }
-
   
 
 }

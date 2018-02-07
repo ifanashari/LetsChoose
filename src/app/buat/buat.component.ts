@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./buat.component.scss']
 })
 export class BuatComponent implements OnInit {
+  loggedin:boolean;
+  public logic: string;
 
   constructor(private datSer:DataService , private route:Router , private tilSer:Title) {
     this.tilSer.setTitle('Login Admin');
@@ -23,6 +25,8 @@ export class BuatComponent implements OnInit {
   }
 
   loginAdmin(){
+    this.showLoad();
+
     this.datSer.loginAdmin(this.model.username , this.model.password)
     .subscribe(perLog => {
       this.perLog = perLog;
@@ -31,13 +35,27 @@ export class BuatComponent implements OnInit {
         sessionStorage.setItem('admin' , 'good');
         sessionStorage.setItem('admin-name' , perLog.username);
         sessionStorage.setItem('admin-id' , perLog.id_admin);
-        window.alert("Success Login. Ayo milih");
         this.route.navigate(['/dashboard']);
-      }else{
-        return false;
+      }
+      else if(perLog == "Fname"){
+        this.logic = "Wname";
+        return true;
+      }
+      else if(perLog == "Fpass"){
+        this.logic = "Wpass";
+        return true;
       }
 
     })
   }
+
+  clearOn(){
+    this.logic = "noLog";
+  }
+
+  showLoad(){
+    this.logic = "load";
+  }
+
 
 }

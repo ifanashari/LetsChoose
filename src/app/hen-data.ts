@@ -34,7 +34,8 @@ export class calon {
     nama_calon:string;
     deskripsi:string;
     riwayat_hidup:string;
-    photo:string;
+    photo:any;
+    p_tmp:string;
     id_ruang:string;
 }
 

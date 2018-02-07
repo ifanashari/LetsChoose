@@ -31,7 +31,6 @@ export class PortalComponent implements OnInit {
   
 
   ngOnInit() {
-    
     if (this.username) {
       this.status = false;
     }else{

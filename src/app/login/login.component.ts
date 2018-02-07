@@ -31,21 +31,17 @@ export class LoginComponent implements OnInit {
   yname:string;
   baseUrl = "../../assets";
   ngOnInit() {
-    this.authSer.authState.subscribe(user => {
-      this.user = user;
-    });
-    TimerObservable.create(0 , 2000).subscribe(() => {  
-    if (this.user != null) {
-      sessionStorage.setItem('status' , 'logged');
-      this.route.navigate(['/portal']);
-    }
-  })
+
   }
 
   signInGoogle(): void{
-    this.authSer.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.authSer.signIn(GoogleLoginProvider.PROVIDER_ID)
+    .then(() => {
+        sessionStorage.setItem('status' , 'logged');
+        this.route.navigate(['/portal']);
+    })
   }
-
+  
   signInFacebook(): void{
     this.authSer.signIn(FacebookLoginProvider.PROVIDER_ID)
   }

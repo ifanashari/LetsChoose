@@ -95,4 +95,14 @@ export class DataService {
     })
   }
 
+  deletedCalon(id){
+    return this._http.post('http://localhost:100/LetsApi/Admin/dCalon.php' , {'id': id})
+    .map(() => this.showCalon(id));
+  }
+
+  deletedRuang(id){
+    return this._http.post('http://localhost:100/LetsApi/Admin/dRuang.php' , {'id': id})
+    .map(() => this.showRuang());
+  }
+
 }

@@ -1,3 +1,42 @@
+<!-- Failname -->
+<div class="container loadbar" *ngIf="(logic == 'load')">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+    <img src="{{baseAse}}/img/Rolling-1s-200px.gif" alt="load">
+    <p style="color:white">Loading...</p>
+  </div>
+</div>
+
+
+<!-- Failname -->
+<div class="container frameart" *ngIf="(logic == 'Wname')">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3 fillart text-center">
+    <h1>Maaf anda tidak terdaftar. Silahkan Daftar</h1>
+    <p>Please Contact your Admin</p>
+    <div style="margin:40px 0;"></div>
+    <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
+  </div>
+</div>
+
+<!-- Failpassword -->
+<div class="container frameart" *ngIf="(logic == 'Wpass')">
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3 fillart text-center">
+  <h1 style="color: red;">Oops!! Password Kamu Salah</h1>
+  <p>Please Contact your Admin</p>
+  <div style="margin:40px 0;"></div>
+  <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
+</div>
+</div>
+
+<!-- Failconnect -->
+<div class="container frameart" *ngIf="(logic == 'ErrConn')">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3 fillart text-center">
+    <h1 style="color: red;">Oops!! Your lost Connection</h1>
+    <p>Please Try again Latter</p>
+    <div style="margin:40px 0;"></div>
+    <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
+  </div>
+</div>
+
 <div class="margintop">
 </div>
 <div class="topup">

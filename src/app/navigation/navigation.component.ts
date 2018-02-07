@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router/';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-navigation',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router/';
 export class NavigationComponent implements OnInit {
   img = "../../assets/image/logoproject2.png";
   public useradmin:string;
-  constructor(private router: Router) {
+  constructor(private router: Router , private dashClass:DashboardComponent) {
     this.useradmin = sessionStorage.getItem('admin-name');
   }
 
@@ -21,12 +22,12 @@ export class NavigationComponent implements OnInit {
     this.router.navigate(['/dashboard']);
   }
 
-  logOut(){
-    sessionStorage.removeItem('admin-name');
-    sessionStorage.removeItem('admin-id');
-    sessionStorage.removeItem('admin');
-    sessionStorage.clear();
-    this.router.navigate(['/loginAdmin']);
+  changeSt(){
+    this.dashClass.changeSt();
   }
+  closepop(){
+    this.dashClass.closepop();
+  }
+
 
 }
