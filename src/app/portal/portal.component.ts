@@ -7,6 +7,7 @@ import { AuthService } from 'angularx-social-login';
 import { GoogleLoginProvider ,FacebookLoginProvider } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-portal',
@@ -21,11 +22,13 @@ export class PortalComponent implements OnInit {
   status:boolean;
   username:string;
 
-  constructor(private authSer: AuthService , private router: Router) { 
+  constructor(private authSer: AuthService , private router: Router , private datSer: DataService) { 
     this.username = sessionStorage.getItem('nama');
   }
 
+  ruang:any;
   model = new tokCho();
+  
 
   ngOnInit() {
     
@@ -40,7 +43,18 @@ export class PortalComponent implements OnInit {
   }
 
   matchTok(){
+    this.datSer.enterRuang(this.model.token)
+    .subscribe(ruang => {
+      this.ruang = ruang;
 
+      if (ruang.token_ruang) {
+        sessionStorage.setItem('ruang' , ruang.id_ruang);
+        this.router.navigate(['/pemilihan']);
+      }
+      else{
+        window.alert("soryy");
+      }
+    });
   }
 
   logOutSocial(){
