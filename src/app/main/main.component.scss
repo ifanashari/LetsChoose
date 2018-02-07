@@ -12,16 +12,20 @@ $red: #d9534f;
             small{color: white;}
         }
         .sign{
-            color: white;   
-            h3{
-                i{transition: .2s;}
-            }
-            &:active{outline: none;}
-            &:hover{
-                cursor: pointer;
-                h3{
-                    i{transform: rotate(360deg);}
+            margin: 10vh auto 0 auto;display: flex;align-items: center;
+            h4{
+                width: 250px;margin: auto;color: white;text-align: center;border: thin solid white;padding: 10px;border-radius: 50px;
+                &:active{outline: none;}
+                &:hover{
+                    cursor: pointer;
                 }
+            }
+            #login{
+                &:hover{border-color: $primary;/*text-shadow: 1px 1px 1px black;*/background: white;color: lighten($primary, 10%);}
+            }
+            #login-admin{
+                color: $primary;background: white;border-color: $primary;
+                &:hover{border-color: white;/*text-shadow: 1px 1px 1px black;*/background: none;color: white;}
             }
         }
     }
@@ -37,7 +41,7 @@ $red: #d9534f;
         cursor: pointer;box-shadow: 3px 3px 1px darkgray;
         // h1{text-shadow: -2px -2px 1px black;}
         // h3{text-shadow: -2px -2px 1px black;}
-        i{transform: scale(1.3, 1.3) translateX(-20px) translateY(13px);filter: drop-shadow(5px 5px 1px black);}
+        i{transform: scale(1.3, 1.3) translateX(-20px) translateY(13px);filter: drop-shadow(3px 3px 1px rgb(22, 22, 22));}
     }
 }
 #intro-one{
@@ -49,6 +53,6 @@ $red: #d9534f;
     &:hover{background: darken($green, 10%)}
 }
 #intro-three{
-    background: darken($red, 5%);
-    &:hover{background: darken($red, 10%)}
+    background: darken($red, 13%);
+    &:hover{background: darken($red, 15%)}
 }

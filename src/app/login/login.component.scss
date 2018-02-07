@@ -8,8 +8,7 @@
     }
 }
 .margintop{
-    margin:auto;padding:auto;width: 100%;height: 100vh;position: fixed;background-image: url('../../assets/img/vacbek.jpg');
-    background-attachment: fixed;background-size: cover;z-index: -2;
+    margin:auto;padding:auto;width: 100%;height: 100vh;position: fixed;background: url('../../assets/image/bgadmin.jpg') fixed center;background-size: cover;z-index: -2;
 }
 .login-logo{
     a{
@@ -30,3 +29,4 @@
     width: 100%;height: 100%;position: fixed;z-index: 4 !important;background-color: rgba(5, 5, 5, 0.929);
     padding-top: 33vh;
 }
+.login-box-body{background: rgba(rgb(17, 17, 17), 0.9) !important;color: white;}

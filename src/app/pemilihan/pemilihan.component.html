@@ -12,8 +12,8 @@
       <p>Deskripsi Ruang: {{ruang.deskripsi}}</p>
 
     </div>
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" *ngFor="let calon of cabalon">
-      <div class="calon">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" *ngFor="let calon of cabalon; let i = index;">
+      <div class="calon" [style.background-color]="getColor(i)">
         <div class="text-center">
           <i class="fa fa-user-circle-o" aria-hidden="true"></i>
         </div>

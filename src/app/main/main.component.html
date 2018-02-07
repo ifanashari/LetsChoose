@@ -19,11 +19,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="sign text-center" [routerLink]="['login']">
-                <h3>
+            <div class="sign text-center">
+                <h4 [routerLink]="['login']" id="login">
                     <i class="fa fa-sign-in" aria-hidden="true"></i>
                     Login Here
-                </h3>
+                </h4>
+                <h4 [routerLink]="['loginAdmin']" id="login-admin">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    Login Admin Here
+                </h4>
                 <!-- <button type="button" class="btn btn-info" [routerLink]="['login']">
                     <h3>
                         <i class="fa fa-sign-in" aria-hidden="true"></i>
