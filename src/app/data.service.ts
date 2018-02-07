@@ -10,7 +10,7 @@ export class DataService {
   constructor(private _http:Http) { }
 
   getAlldata(){
-    return this._http.get("http://localhost:100/LetsApi/select.php")
+    return this._http.get("http://turnuphbodiez.000webhostapp.com/LetsApi/select.php")
     .map(res => {
 
       this.checkMe = res;
@@ -23,12 +23,12 @@ export class DataService {
   }
 
   addPerson(data , table){
-    return this._http.post("http://localhost:100/LetsApi/insert.php" , data , table)
+    return this._http.post("http://turnuphbodiez.000webhostapp.com/LetsApi/insert.php" , data , table)
     .map(() => "");
   }
 
   loginPerson(username : string , password:string){
-    return this._http.post("http://localhost:100/LetsApi/login.php" , { username: username, password: password })
+    return this._http.post("http://turnuphbodiez.000webhostapp.com/LetsApi/login.php" , { username: username, password: password })
     .map(res =>{
       if (res) {
         return res.json();
@@ -38,7 +38,7 @@ export class DataService {
 
   //admin Hendler
   loginAdmin(username : string , password:string){
-    return this._http.post("http://localhost:100/LetsApi/Admin/login.php" , { username: username, password: password })
+    return this._http.post("http://turnuphbodiez.000webhostapp.com/LetsApi/Admin/login.php" , { username: username, password: password })
     .map(res =>{
       if (res) {
         return res.json();
@@ -47,17 +47,17 @@ export class DataService {
   }
 
   addAdmin(data){
-    return this._http.post("http://localhost:100/LetsApi/Admin/insert.php" , data)
+    return this._http.post("http://turnuphbodiez.000webhostapp.com/LetsApi/Admin/insert.php" , data)
     .map(() => "");
   }
 
   //addruang
   addRuang(data){
-    return this._http.post('http://localhost:100/LetsApi/Admin/addruang.php' , data)
+    return this._http.post('http://turnuphbodiez.000webhostapp.com/LetsApi/Admin/addruang.php' , data)
       .map(() => "");
   }
   showRuang(){
-    return this._http.get('http://localhost:100/LetsApi/Admin/showruang.php')
+    return this._http.get('http://turnuphbodiez.000webhostapp.com/LetsApi/Admin/showruang.php')
       .map(res =>{
 
         this.checkMe = res;
@@ -69,6 +69,21 @@ export class DataService {
         }
 
       });
+  }
+
+  showRuangOne(id){
+    return this._http.post('http://turnuphbodiez.000webhostapp.com/LetsApi/Admin/showoner.php' , {'id' : id })
+      .map(res => res.json());
+  }
+
+  addCalon(data){
+    return this._http.post('http://turnuphbodiez.000webhostapp.com/LetsApi/Admin/addcalon.php' , data)
+      .map(() => "");
+  }
+
+  showCalon(id){
+    return this._http.post('http://turnuphbodiez.000webhostapp.com/LetsApi/Admin/showCalon.php' , {'id': id})
+    .map(res => res.json());
   }
 
 }

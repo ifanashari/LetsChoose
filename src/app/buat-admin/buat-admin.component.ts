@@ -8,7 +8,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./buat-admin.component.scss']
 })
 export class BuatAdminComponent implements OnInit {
-  protected logic:boolean;
+  public logic:boolean;
   constructor(private datSer:DataService) {
     this.logic = false;  
   }

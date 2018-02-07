@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { navRoute } from './router';
 import { DataService } from './data.service';
 import { HttpModule } from '@angular/http';
-import { SocialLoginModule } from 'angularx-social-login';
-import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
+import { SocialLoginModule ,  AuthServiceConfig } from 'angularx-social-login';
+import {GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 
 
 import { AppComponent } from './app.component';
@@ -25,7 +26,7 @@ import { HasilComponent } from './hasil/hasil.component';
 import { AuthGuard } from './auth-guard';
 import { AuthService } from './auth.service';
 import { DashHomeComponent } from './dash-home/dash-home.component';
-
+import { CalonComponent } from './calon/calon.component';
 
 let config = new AuthServiceConfig([
   {
@@ -49,17 +50,18 @@ const routes: Routes = []
     PemilihanComponent,
     HasilComponent,
     DashboardComponent,NavigationComponent,MainComponent,LoginComponent,DaftarComponent,
-    BuatComponent,BuatAdminComponent,PortalComponent,RuangComponent, DashHomeComponent
+    BuatComponent,BuatAdminComponent,PortalComponent,RuangComponent, DashHomeComponent, CalonComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,HttpModule,
     RouterModule.forRoot(navRoute),
-    SocialLoginModule
+    SocialLoginModule,
+    CommonModule
   ],
   providers: [
     {provide:DataService , useClass:DataService},AuthGuard,AuthService,
-    {provide: AuthServiceConfig, useFactory: provideConfig}
+    {provide: AuthServiceConfig, useFactory: provideConfig},
   ],
   bootstrap: [AppComponent]
 })

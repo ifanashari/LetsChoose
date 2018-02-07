@@ -22,10 +22,20 @@ export class tokCho{
 }
 
 export class ruang {
-    token:string;
+    id_ruang:string;
+    token_ruang:string;
     judul_ruang:string;
     deskripsi:string;
     id_admin:string;
+}
+
+export class calon {
+    id_calon:string;
+    nama_calon:string;
+    deskripsi:string;
+    riwayat_hidup:string;
+    photo:string;
+    id_ruang:string;
 }
 
 export class table{

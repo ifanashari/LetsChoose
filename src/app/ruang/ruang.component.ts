@@ -8,8 +8,8 @@ import { DataService } from '../data.service';
   styleUrls: ['./ruang.component.scss']
 })
 export class RuangComponent implements OnInit {
-  protected Token: string;
-  protected check:boolean;
+  Token: string;
+  public check:boolean;
   ruang = new ruang();
   constructor(private datSer: DataService) {
     this.check = false;
@@ -32,7 +32,7 @@ export class RuangComponent implements OnInit {
 
   genToken(){
     this.Token = this.getToken();
-    this.ruang.token = this.Token;
+    this.ruang.token_ruang = this.Token;
   }
 
   sendRuang(){

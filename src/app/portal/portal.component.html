@@ -7,12 +7,15 @@
   </div>
   
 
+
+
 <div class="margintop">
 </div>
 <div class="topup">
-  <p>Powered by Google</p>
+    <p>Powered by Google</p>
 </div>
-<div class="container blaclips">
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+  <div class="blaclips">
     <div class="login-box">
         <div class="login-logo">
           <a><b>Token Ruangan</b>Pemilu !</a>
@@ -20,7 +23,7 @@
         <!-- /.login-logo -->
         <div class="login-box-body">
           <p class="login-box-msg" *ngIf="!status">Selamat Datang {{username}} </p>
-          <p class="login-box-msg" *ngIf="status">Selamat Datang {{user.name}}</p>
+          <p class="login-box-msg" *ngIf="status">Selamat Datang {{orang.name}}</p>
           <p class="login-box-msg">Token akan diberikan oleh panitia pemilu</p>
       
           <form method="post" (submit)="matchTok()">
@@ -37,4 +40,10 @@
         </div>
         <!-- /.login-box-body -->
       </div>
+</div>  
 </div>
+
+<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+  
+</div>
+
