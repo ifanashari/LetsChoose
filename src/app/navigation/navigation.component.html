@@ -8,7 +8,11 @@
         <i class="fa fa-home" aria-hidden="true"></i>
         Buat Ruang 
     </div>
-    <div class="nav-cont">
+    <div class="nav-cont" routerLink="/dashboard/hasilRuang">
+        <i class="fa fa-pie-chart" aria-hidden="true"></i>
+        Hasil Pemilihan
+    </div>
+    <div class="nav-cont" (click)="deleteAdmin()">
         <i class="fa fa-trash" aria-hidden="true"></i>
         Delete this admin
     </div>

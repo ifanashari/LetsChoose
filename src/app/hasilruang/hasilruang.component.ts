@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-
 @Component({
-  selector: 'app-dash-home',
-  templateUrl: './dash-home.component.html',
-  styleUrls: ['./dash-home.component.scss']
+  selector: 'app-hasilruang',
+  templateUrl: './hasilruang.component.html',
+  styleUrls: ['./hasilruang.component.scss']
 })
-export class DashHomeComponent implements OnInit {
+export class HasilruangComponent implements OnInit {
   empty = true;
   ruang: any;
   randColor = [

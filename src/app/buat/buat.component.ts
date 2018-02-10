@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { login } from '../hen-data';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-buat',
@@ -13,7 +14,7 @@ export class BuatComponent implements OnInit {
   loggedin:boolean;
   public logic: string;
 
-  constructor(private datSer:DataService , private route:Router , private tilSer:Title) {
+  constructor(private datSer:DataService , private route:Router , private tilSer:Title , private authSer: AuthService) {
     this.tilSer.setTitle('Login Admin');
    }
   perLog:any;
@@ -35,6 +36,7 @@ export class BuatComponent implements OnInit {
         sessionStorage.setItem('admin' , 'good');
         sessionStorage.setItem('admin-name' , perLog.username);
         sessionStorage.setItem('admin-id' , perLog.id_admin);
+        this.authSer.openGadmin();
         this.route.navigate(['/dashboard']);
       }
       else if(perLog == "Fname"){

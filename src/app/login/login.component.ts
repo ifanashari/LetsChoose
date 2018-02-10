@@ -9,6 +9,7 @@ import { TimerObservable } from 'rxjs/observable/TimerObservable';
 import { AuthService } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
 import { GoogleLoginProvider , FacebookLoginProvider } from 'angularx-social-login';
+import { AuthServiceOpenGuards } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
   public logic: string;
 
   constructor(private route: Router , private datSer: DataService
-     , private authSer: AuthService , private tilSer:Title) { 
+     , private authSer: AuthService , private tilSer:Title , private openG: AuthServiceOpenGuards) { 
     this.logic = "noLog";
     this.tilSer.setTitle('Login Ruangan');
   }
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   signInGoogle(): void{
+    this.showLoad();
     this.authSer.signIn(GoogleLoginProvider.PROVIDER_ID)
     .then(() => {
         sessionStorage.setItem('status' , 'logged');
@@ -65,6 +67,7 @@ export class LoginComponent implements OnInit {
       if (perLog.id_user) {
         sessionStorage.setItem('nama' , perLog.username);
         sessionStorage.setItem('status' , 'logged');
+        this.openG.openGuard();
         this.route.navigate(['/portal']);
       }
       else if(perLog == "Fname"){

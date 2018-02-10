@@ -10,20 +10,23 @@ import { BuatComponent } from './buat/buat.component';
 import { BuatAdminComponent } from './buat-admin/buat-admin.component';
 import { PortalComponent } from './portal/portal.component';
 import { PemilihanComponent } from './pemilihan/pemilihan.component';
-import { AuthGuard } from './auth-guard';
+import { AuthGuard, AuthGuardAdmin } from './auth-guard';
 import { RuangComponent } from './ruang/ruang.component';
 import { DashHomeComponent } from './dash-home/dash-home.component';
 import { HasilComponent } from './hasil/hasil.component';
 import { CalonComponent } from './calon/calon.component';
+import { HasilruangComponent } from './hasilruang/hasilruang.component';
 
 
 export const navRoute:Routes = [
     {path: '' , component: MainComponent},
     {
-        path: 'dashboard', component: DashboardComponent,
+        path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuardAdmin],
         children: [
             {path: '' , component:DashHomeComponent },
             {path: 'tambahruang' , component:RuangComponent },
+            {path: 'hasilRuang' , component:HasilruangComponent },
+            {path: 'hasilCalon/:id' , component:HasilComponent },
             {path: 'isiruangan/:id' , component:CalonComponent }
         ]
     },

@@ -18,3 +18,19 @@ export class AuthGuard implements CanActivate {
         }
     }
 }
+
+@Injectable()
+export class AuthGuardAdmin implements CanActivate {
+    constructor(private ats: AuthService , private route:Router){ }
+
+    canActivate():boolean{
+        if (this.ats.Gadmin) {
+            return true;
+        }
+        else{
+            window.alert("Sorry You dont have Permision to Admin. Login First");
+            this.route.navigate(['/loginAdmin']);
+            return false;
+        }
+    }
+}

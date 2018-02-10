@@ -11,12 +11,12 @@ import { SocialUser } from 'angularx-social-login';
   templateUrl: './pemilihan.component.html',
   styleUrls: ['./pemilihan.component.scss']
 })
-export class PemilihanComponent implements OnInit{
+export class PemilihanComponent implements OnInit {
 
-  orang : SocialUser;
+  orang: SocialUser;
   ruang = new ruang();
   calon = new calon();
-  cabalon:any;
+  cabalon: any;
   randColor = [
     '#1153aa', '#11aa1e', '#f13737', '#bc37f1', '#c27510',
     '#1153aa', '#11aa1e', '#f13737', '#bc37f1', '#c27510',
@@ -24,9 +24,12 @@ export class PemilihanComponent implements OnInit{
     '#1153aa', '#11aa1e', '#f13737', '#bc37f1', '#c27510'
   ];
   private id_ruang = sessionStorage.getItem('ruang');
-  id:string;
-  constructor(private datSer: DataService , private authSer: AuthService , private router: Router) {
+  id: string;
+  jumlahpoling: any;
+  pointbertambah: number;
+  constructor(private datSer: DataService, private authSer: AuthService, private router: Router) {
     this.id = this.id_ruang;
+
   }
 
   ngOnInit() {
@@ -34,21 +37,35 @@ export class PemilihanComponent implements OnInit{
     this.getCalon();
   }
 
-  getOneRuang(){
+  getOneRuang() {
     this.datSer.showRuangOne(this.id_ruang).subscribe(ruang => {
       this.ruang = ruang[0];
     })
   }
-  getCalon(){
+  getCalon() {
     this.datSer.showCalon(this.id).subscribe(cabalon => {
       this.cabalon = cabalon;
     })
   }
-  getColor(sam){
+  getColor(sam) {
     this.randColor[sam];
   }
+  setPemilihan(pointplus , id_calon) {
+    let confm = confirm("Anda yakin memilih ini?. Anda dapat memilih sekali. Pertimbangkan!!")
 
-  logOut(){
+    if (confm == true) {
+
+      pointplus ++;
+      this.datSer.pemolingan(pointplus, id_calon).subscribe(() => {
+        this.getCalon();
+      })
+    } else {
+      return false;
+    }
+
+  }
+
+  logOut() {
     sessionStorage.removeItem('status');
     sessionStorage.removeItem('nama');
 
@@ -57,7 +74,7 @@ export class PemilihanComponent implements OnInit{
       this.authSer.signOut().then(() => {
         this.router.navigate(['/login']);
       });
-    }else{
+    } else {
       this.router.navigate(['/login']);
     }
   }
