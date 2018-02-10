@@ -1,6 +1,7 @@
 import { NavigationComponent } from './../navigation/navigation.component';
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
+import { window } from 'rxjs/operators/window';
 
 declare var $:any;
 @Component({
@@ -16,8 +17,15 @@ export class DashboardComponent implements OnInit {
    }
 
   ngOnInit() {
-    $('.try').on('click', function(){
-      $('.try').css({'color':'red'});
+    $('.fa-bars').on('click', function(){
+      $('#main-nav').css({'transform':'translateX(0)'});
+      $('.fa-close').css({'display':'block'});
+      $('.fa-bars').css({'display':'none'});
+    });
+    $('.fa-close').on('click', function(){
+      $('#main-nav').css({'transform':'translateX(-100%)'});
+      $('.fa-close').css({'display':'none'});
+      $('.fa-bars').css({'display':'block'});
     });
   }
 
