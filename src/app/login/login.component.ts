@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
         this.peserta.username = "user-google";
         this.datSer.addPerson(this.peserta , 'peserta').subscribe(() => {
           sessionStorage.setItem('status' , 'logged');
+          this.openG.openGuard();
           this.route.navigate(['/portal']);
         })
     })
@@ -51,6 +52,14 @@ export class LoginComponent implements OnInit {
   
   signInFacebook(): void{
     this.authSer.signIn(FacebookLoginProvider.PROVIDER_ID)
+    .then(() => {
+      this.peserta.username = "user-facebook";
+      this.datSer.addPerson(this.peserta , 'peserta').subscribe(() => {
+        sessionStorage.setItem('status' , 'logged');
+        this.openG.openGuard();
+        this.route.navigate(['/portal']);
+      })
+  })
   }
 
   signOut(): void{

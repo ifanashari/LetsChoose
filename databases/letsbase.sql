@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09 Feb 2018 pada 10.59
+-- Generation Time: 11 Feb 2018 pada 15.05
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -35,15 +35,6 @@ CREATE TABLE `admin` (
   `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `admin`
---
-
-INSERT INTO `admin` (`id_admin`, `username`, `password`, `email`) VALUES
-('ByWt7KP0yF6bt9rhylOk', 'b', 'b', 'b@b'),
-('CgLVZywwdRvHTl2sM556', 'AngAdmin', '123qwe123', 'anggerpenceng10cm@gmail.com'),
-('ijAD4GwZutp4HaGjyQxD', 'b', 'b', 'b@b');
-
 -- --------------------------------------------------------
 
 --
@@ -53,21 +44,14 @@ INSERT INTO `admin` (`id_admin`, `username`, `password`, `email`) VALUES
 CREATE TABLE `calon` (
   `id_calon` varchar(25) NOT NULL,
   `nama_calon` varchar(50) NOT NULL,
-  `deskripsi` longtext NOT NULL,
-  `riwayat_hidup` longtext NOT NULL,
   `poling` int(11) DEFAULT NULL,
-  `photo` text NOT NULL,
+  `visi` longtext NOT NULL,
+  `misi` longtext NOT NULL,
+  `persen` float DEFAULT NULL,
+  `photo` mediumtext NOT NULL,
   `p_tmp` text NOT NULL,
   `id_ruang` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `calon`
---
-
-INSERT INTO `calon` (`id_calon`, `nama_calon`, `deskripsi`, `riwayat_hidup`, `poling`, `photo`, `p_tmp`, `id_ruang`) VALUES
-('APxOloDzskTtwIx', 'Bapak Widodo S.Pd', 'lorem ipsum', 'lorem ipsum', NULL, '', '', '4MfPg2cDXMQyTgo'),
-('eICEBtsIZBCPxKc', 'Bapak Prabowo SE', 'Belliau memiliki deskripsi yang panjang', 'Beliau seorang yang hebat', NULL, '', '', 'Eo6MUmPX5LAXeyl');
 
 -- --------------------------------------------------------
 
@@ -88,9 +72,12 @@ CREATE TABLE `peserta` (
 
 INSERT INTO `peserta` (`id_user`, `username`, `password`, `email`) VALUES
 ('DgqTW3XYFoFiqzlH9mEO', 'Angger Pratamadhita Wibawa', '123qwe123', 'anggerpenceng10cm@gmail.com'),
+('ht7e6p0pnUlQkacmNiH2', 'm ifan', '123123123', 'ifan@gamil.com'),
+('LPpM26nwpXzQWzmyJcYM', 'Adrian', '123qwe123', 'Adrian@gmail.com'),
 ('Qf1UwLkbY2vYN7gYbobM', 'Ifan mau nyoblos', 'coblosyuk', 'ifan@coblos.poi.com'),
 ('SVG8Hb1KMGwlMuXsZlcK', 'Yuuki Yuuna chan', 'yuukichan', 'Yukki@gmail.com'),
-('wlEq1HW46jzcITCVvRAh', 'coba saja', '123123123', 'Aiika@yahoo.com');
+('u9OPxBDQvY0vl5zoKgev', 'Lika-Chan', 'lika1234', 'lika@gmail.com'),
+('xJwTuDq4tWIcgDdjpbDo', 'pak haji man', '123qwe123', 'haji@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -105,15 +92,6 @@ CREATE TABLE `ruang` (
   `deskripsi` text NOT NULL,
   `id_admin` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `ruang`
---
-
-INSERT INTO `ruang` (`id_ruang`, `token_ruang`, `judul_ruang`, `deskripsi`, `id_admin`) VALUES
-('4MfPg2cDXMQyTgo', 'oIJ8gQKfg2FD', 'Pemilihan Presiden RI', 'Pemilihan secara sekala besar untuk mewujudkan indonesia merdeka', 'CgLVZywwdRvHTl2sM556'),
-('Eo6MUmPX5LAXeyl', 'FobANlJFof1u', 'Pemilihan Wlikota Mojokerto', 'Menggunakan sistem online', 'CgLVZywwdRvHTl2sM556'),
-('rYzehpLH2GPpXAR', 'rCFK79s0Lfkb', 'Pemilihan Ketua RT 03', 'Pemilihan di adakan pada tanggal 10 juli 2020', 'CgLVZywwdRvHTl2sM556');
 
 --
 -- Indexes for dumped tables

@@ -1,52 +1,55 @@
 <div class="margintop">
-  </div>
-  <div class="topup">
-    <p>Powered by Google</p>
-  </div>
-  <div class="container blaclips">
-      <div class="login-box">
-          <div class="login-logo">
-            <a><b>Daftar</b>Dulu!</a>
-          </div>
-          <!-- /.login-logo -->
-          <div class="login-box-body">
-            <p class="login-box-msg">Anda baru memilih? Daftar dulu</p>
-        
-            <form method="post" (submit)="addPeserta()">
-              <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="Nama Lengkap"
-                [(ngModel)]="model.username" name="username">
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-              </div>
-              <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="Password"
-                [(ngModel)]="model.password" name="password">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-              </div>
-              <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="Email"
-                [(ngModel)]="model.email" name="email">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-              </div>
-              <div class="row">
-                <!-- /.col -->
-                <div class="col-xs-4">
-                  <button type="submit" class="btn btn-primary">Daftar</button>
-                </div>
-                <!-- /.col -->
-              </div>
-            </form>
-        
-            <div class="social-auth-links text-center">
-            </div>
-            <!-- /.social-auth-links -->
-        
-            <a routerLink="/login">Kembali ke Login Page</a><br>
+</div>
+<div class="topup">
+  <p>Powered by Google</p>
+</div>
+<div style="height: 7.5vh"></div>
+<div class="container blaclips">
+  <div class="login-box">
+    <div class="login-logo">
+      <a style="color: black">
+        <b>Daftar </b>User
+      </a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
 
-            <div class="alert alert-success" *ngIf="logic">
-              <strong>Success</strong> Pendaftaran Berhasil. Silahkan login untuk memilih
-            </div>
-          </div>
-          <!-- /.login-box-body -->
+      <form method="post" (submit)="addPeserta()">
+        <div class="form-group has-feedback">
+          <input type="email" class="form-control" placeholder="Nama Lengkap" [(ngModel)]="model.username" name="username">
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
+        <div class="form-group has-feedback">
+          <input type="password" class="form-control" placeholder="Password" [(ngModel)]="model.password" name="password">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <input type="email" class="form-control" placeholder="Email" [(ngModel)]="model.email" name="email">
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="row">
+          <!-- /.col -->
+          <div class="col-xs-12">
+            <input type="submit" class="btn btn-info" value="Sign Up">
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 
+            col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" style="margin: 10vh 0 0 0">
+        <a routerLink="/">Back</a>
+        <br>
+        <div class="alert alert-success" *ngIf="logic">
+          <strong>Success</strong> Pendaftaran Berhasil. Silahkan login untuk memilih
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /.login-box-body -->
   </div>
+</div>
