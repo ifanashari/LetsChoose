@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
-import { login} from '../hen-data';
+import { login, user} from '../hen-data';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
 
 //login with google API
 import { AuthService } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
 import { GoogleLoginProvider , FacebookLoginProvider } from 'angularx-social-login';
-import { AuthServiceOpenGuards } from '../auth.service';
+import { AuthServiceGuard } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -24,12 +24,13 @@ export class LoginComponent implements OnInit {
   public logic: string;
 
   constructor(private route: Router , private datSer: DataService
-     , private authSer: AuthService , private tilSer:Title , private openG: AuthServiceOpenGuards) { 
+     , private authSer: AuthService , private tilSer:Title , private openG: AuthServiceGuard) { 
     this.logic = "noLog";
     this.tilSer.setTitle('Login Ruangan');
   }
   perLog:any;
   model = new login();
+  peserta = new user();
   yname:string;
   baseUrl = "../../assets";
   ngOnInit() {
@@ -40,8 +41,11 @@ export class LoginComponent implements OnInit {
     this.showLoad();
     this.authSer.signIn(GoogleLoginProvider.PROVIDER_ID)
     .then(() => {
-        sessionStorage.setItem('status' , 'logged');
-        this.route.navigate(['/portal']);
+        this.peserta.username = "user-google";
+        this.datSer.addPerson(this.peserta , 'peserta').subscribe(() => {
+          sessionStorage.setItem('status' , 'logged');
+          this.route.navigate(['/portal']);
+        })
     })
   }
   

@@ -1,4 +1,4 @@
-import { Component, OnInit , ElementRef , ViewChild} from '@angular/core';
+import { Component, OnInit , ElementRef , ViewChild, EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
@@ -6,11 +6,12 @@ import { ruang, calon , photo } from '../hen-data';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import { error } from 'util';
+import { UploadOutput, UploadInput, UploadFile, humanizeBytes, UploaderOptions } from 'ngx-uploader';
 
 @Component({
   selector: 'app-calon',
   templateUrl: './calon.component.html',
-  styleUrls: ['./calon.component.scss']
+  styleUrls: ['./calon.component.scss'],
 })
 export class CalonComponent implements OnInit {
   form: FormGroup;
@@ -24,19 +25,30 @@ export class CalonComponent implements OnInit {
   url:any;
   loading: boolean = false;
 
+  //local hp upload
+  options: UploaderOptions;
+  formData: FormData;
+  files: UploadFile[];
+  uploadInput: EventEmitter<UploadInput>;
+  humanizeBytes: Function;
+  dragOver: boolean;
+
   @ViewChild('fileInput') fileInput: ElementRef;
 
   constructor(
     private router: Router , private route: ActivatedRoute , private datSer: DataService,
     private elem: ElementRef, private fB: FormBuilder
   ) { 
-    this.createForm();
     this.edit = false;
     this.plusCalon = false;
     this.check = false;
     this.checkUrl = false;
 
     this.calon.id_ruang = this.id;
+    this.files = []; // local uploading files array
+    this.uploadInput = new EventEmitter<UploadInput>(); // input events, we use this to emit data to ngx-uploader
+    this.humanizeBytes = humanizeBytes;
+    this.createForm();
 
   }
 
@@ -51,6 +63,7 @@ export class CalonComponent implements OnInit {
   fileToUpload: File = null;
   ruang = new ruang();
   calon = new calon();
+  img = new photo();
   cabalon:any;
   ngOnInit() {
     this.getOne();
@@ -80,31 +93,6 @@ export class CalonComponent implements OnInit {
     return text;
   }
 
-  onFileChange(event) {
-    let reader = new FileReader();
-    if(event.target.files && event.target.files.length > 0) {
-      let file = event.target.files[0];
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        this.url = event.target.result;
-        this.form.get('avatar').setValue({
-          filename: file.name,
-          filetype: file.type,
-          value: reader.result.split(',')[1]
-        })
-      };
-    }
-  }
-
-  onSubmit(id_calon) {
-    const formModel = this.form.value;
-    // In a real-world app you'd have a http request / service call here like
-    // this.http.post('apiUrl', formModel)
-    this.datSer.upPhoto(formModel , id_calon).subscribe(() => {
-      this.getCalon();
-    })
-
-  }
 
   clearFile() {
     this.form.get('avatar').setValue(null);
@@ -169,6 +157,48 @@ export class CalonComponent implements OnInit {
     this.getCalon();
     this.plusCalon = false;
   }
+
+  onUploadOutput(output: UploadOutput): void {
+    if (output.type === 'allAddedToQueue') { 
+
+    } else if (output.type === 'addedToQueue'  && typeof output.file !== 'undefined') { // add file to array when added
+      this.files.push(output.file);
+    } else if (output.type === 'uploading' && typeof output.file !== 'undefined') {
+      // update current data in files array for uploading file
+      const index = this.files.findIndex(file => typeof output.file !== 'undefined' && file.id === output.file.id);
+      this.files[index] = output.file;
+    } else if (output.type === 'removed') {
+      // remove file from array when removed
+      this.files = this.files.filter((file: UploadFile) => file !== output.file);
+    } else if (output.type === 'dragOver') {
+      this.dragOver = true;
+    } else if (output.type === 'dragOut') {
+      this.dragOver = false;
+    } else if (output.type === 'drop') {
+      this.dragOver = false;
+    }
+  }
+
+  fileEvent(fileInput , id_calon){
+    let file = fileInput.target.files[0];
+    let fileName = file.name;
+    console.log(fileName , id_calon);
+    this.datSer.upPhoto(fileName,id_calon).subscribe(() => {
+      this.startUpload(id_calon);
+    });
+}
   
+
+  startUpload(id_calon): void {
+    const event: UploadInput = {
+      type: 'uploadAll',
+      url: 'http://localhost:100/LetsApi/Admin/uploadImg.php',
+      method: 'POST',
+      data: { foo: 'bar' },
+    };
+    this.uploadInput.emit(event);
+    this.getCalon();
+    
+  }
 
 }

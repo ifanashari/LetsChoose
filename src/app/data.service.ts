@@ -110,13 +110,13 @@ export class DataService {
       .map(() => "");
   }
 
-  upPhoto(data , id){
-    return this._http.post('http://localhost:100/LetsApi/Admin/uploadImg.php' , { data ,'id':id})
-      .map(() => "");
+  upPhoto(filename , id){
+    return this._http.post('http://localhost:100/LetsApi/Admin/uploadImg.php' , {'filename':filename , 'id':id})
+    .map(() => "");
   }
 
-  pemolingan(poling , id){
-    return this._http.post('http://localhost:100/LetsApi/pilih.php' , { poling ,'id':id})
+  pemolingan(poling , persen , id){
+    return this._http.post('http://localhost:100/LetsApi/pilih.php' , { poling,'persen':persen ,'id':id})
       .map(() => "");
   }
 

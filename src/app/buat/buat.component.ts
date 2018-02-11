@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { login } from '../hen-data';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthServiceGuard } from '../auth.service';
 
 @Component({
   selector: 'app-buat',
@@ -14,7 +14,7 @@ export class BuatComponent implements OnInit {
   loggedin:boolean;
   public logic: string;
 
-  constructor(private datSer:DataService , private route:Router , private tilSer:Title , private authSer: AuthService) {
+  constructor(private datSer:DataService , private route:Router , private tilSer:Title , private authSer: AuthServiceGuard) {
     this.tilSer.setTitle('Login Admin');
    }
   perLog:any;

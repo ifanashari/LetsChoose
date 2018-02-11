@@ -8,6 +8,7 @@ import { DataService } from './data.service';
 import { HttpModule } from '@angular/http';
 import { SocialLoginModule ,  AuthServiceConfig } from 'angularx-social-login';
 import {GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
+import { NgUploaderModule } from 'ngx-uploader';
 
 
 import { AppComponent } from './app.component';
@@ -24,7 +25,7 @@ import { Profile } from 'selenium-webdriver/firefox';
 import { PemilihanComponent } from './pemilihan/pemilihan.component';
 import { HasilComponent } from './hasil/hasil.component';
 import { AuthGuard, AuthGuardAdmin } from './auth-guard';
-import { AuthService, AuthServiceOpenGuards } from './auth.service';
+import { AuthServiceGuard } from './auth.service';
 import { DashHomeComponent } from './dash-home/dash-home.component';
 import { CalonComponent } from './calon/calon.component';
 import { HasilruangComponent } from './hasilruang/hasilruang.component';
@@ -57,11 +58,11 @@ const routes: Routes = []
     BrowserModule,
     FormsModule,HttpModule,
     RouterModule.forRoot(navRoute),
-    SocialLoginModule,
+    SocialLoginModule,NgUploaderModule,
     CommonModule,ReactiveFormsModule
   ],
   providers: [
-    {provide:DataService , useClass:DataService},AuthGuard,AuthService,AuthGuardAdmin,AuthServiceOpenGuards,
+    {provide:DataService , useClass:DataService},AuthGuard,AuthServiceGuard,AuthGuardAdmin,
     {provide: AuthServiceConfig, useFactory: provideConfig},
   ],
   bootstrap: [AppComponent]

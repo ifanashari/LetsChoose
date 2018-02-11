@@ -3,7 +3,7 @@ import { Router , ActivatedRouteSnapshot,  RouterStateSnapshot } from '@angular/
 import { AuthGuard } from './auth-guard';
 
 @Injectable()
-export class AuthService {
+export class AuthServiceGuard {
   public guards:boolean;
   public Gadmin:boolean;
   constructor() {
@@ -23,11 +23,4 @@ export class AuthService {
     this.Gadmin = true;
   }
 
-}
-@Injectable()
-export class AuthServiceOpenGuards {
-  public guards:boolean;
-  openGuard(){
-    this.guards = true;
-  }
 }

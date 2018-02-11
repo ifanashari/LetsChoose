@@ -32,13 +32,13 @@ export class ruang {
 export class calon {
     id_calon:string;
     nama_calon:string;
-    deskripsi:string;
-    riwayat_hidup:string;
+    visi:string;
+    misi:string;
     id_ruang:string;
 }
 
 export class photo {
-    avatar: string|any;
+    img: string|any;
 }
 
 export class table{

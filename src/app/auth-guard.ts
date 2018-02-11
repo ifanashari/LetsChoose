@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Router} from '@angular/router';
 import { CanActivate } from '@angular/router/src/interfaces';
-import { AuthService } from './auth.service';
+import { AuthServiceGuard } from './auth.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-    constructor(private ats: AuthService , private route:Router){ }
+    constructor(private ats: AuthServiceGuard , private route:Router){ }
 
     canActivate():boolean{
         if (this.ats.guards) {
@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
 
 @Injectable()
 export class AuthGuardAdmin implements CanActivate {
-    constructor(private ats: AuthService , private route:Router){ }
+    constructor(private ats: AuthServiceGuard , private route:Router){ }
 
     canActivate():boolean{
         if (this.ats.Gadmin) {

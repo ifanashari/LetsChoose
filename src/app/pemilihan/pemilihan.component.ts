@@ -6,6 +6,7 @@ import { AuthService } from 'angularx-social-login';
 import { Router } from '@angular/router';
 import { SocialUser } from 'angularx-social-login';
 
+declare var $:any;
 @Component({
   selector: 'app-pemilihan',
   templateUrl: './pemilihan.component.html',
@@ -27,6 +28,8 @@ export class PemilihanComponent implements OnInit {
   id: string;
   jumlahpoling: any;
   pointbertambah: number;
+  jumlahpesertapemilihan:any;
+  presentase:any;
   constructor(private datSer: DataService, private authSer: AuthService, private router: Router) {
     this.id = this.id_ruang;
 
@@ -35,6 +38,7 @@ export class PemilihanComponent implements OnInit {
   ngOnInit() {
     this.getOneRuang();
     this.getCalon();
+    this.getTotalJumlahPeserta();
   }
 
   getOneRuang() {
@@ -50,19 +54,44 @@ export class PemilihanComponent implements OnInit {
   getColor(sam) {
     this.randColor[sam];
   }
-  setPemilihan(pointplus , id_calon) {
-    let confm = confirm("Anda yakin memilih ini?. Anda dapat memilih sekali. Pertimbangkan!!")
+  setPemilihan(pointplus , persen , id_calon , jumpers) {
+    let confm = confirm("Anda yakin memilih ini?. Anda hanya dapat memilih sekali. Pertimbangkan!!")
 
     if (confm == true) {
-
       pointplus ++;
-      this.datSer.pemolingan(pointplus, id_calon).subscribe(() => {
+      persen =+ (pointplus / jumpers * 100);
+      this.datSer.pemolingan(pointplus, persen , id_calon).subscribe(() => {
         this.getCalon();
-      })
+      });
+      this.changeSt();
     } else {
       return false;
     }
 
+  }
+
+  getTotalJumlahPeserta(){
+    this.datSer.getAlldataPeserta().subscribe(jumlahpesertapemilihan => {
+      this.jumlahpesertapemilihan = jumlahpesertapemilihan;
+    })
+  }
+
+  
+  changeSt(){
+    $('.popup').css({
+      "display": "block"
+    });
+    $('.popup-is').css({
+      "transform": "scale(1 , 1)"
+    });
+  }
+  closepop(){
+    $('.popup').css({
+      "display": "none"
+    });
+    $('.popup-is').css({
+      "transform": "scale(0 , 0)"
+    });
   }
 
   logOut() {
@@ -78,5 +107,6 @@ export class PemilihanComponent implements OnInit {
       this.router.navigate(['/login']);
     }
   }
+
 
 }

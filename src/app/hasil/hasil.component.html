@@ -1,23 +1,23 @@
 <div class="col-xs-12 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2">
 
-<div class="container">
-  <h1>Total dari setiap calon Pemilu !</h1>
-  <legend></legend>
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let calon of cabalon">
-      <h2>{{calon.nama_calon}}
-        <small>Hasil {{calon.poling}}/{{jumlahdatapeserta}}</small>
-      </h2>
+  <div class="container">
+    <h1>Total dari setiap calon Pemilu !</h1>
+    <legend></legend>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let calon of cabalon; let i = index ; let akhir of presentasehasilakhir">
+        <h2>{{calon.nama_calon}}
+          <small>Hasil {{calon.poling}}/{{jumlahdatapeserta}}</small>
+        </h2>
 
-      <div class="progress">
-        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="" aria-valuemax="100" [style.width]="presentase()">
-          {{presentasehasilakhir}}%
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="" aria-valuemax="100" [style.width]="presentase(calon.persen)"
+            [style.background-color]="getColor(i)">
+            {{calon.persen}}%
+          </div>
         </div>
+
       </div>
-      <button type="button" class="btn btn-default" (click)="setPresentase(calon.poling , jumlahdatapeserta)">View Hasil Persen</button>
-      
     </div>
+
   </div>
-      
-    </div>
-  </div>
+</div>
