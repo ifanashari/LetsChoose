@@ -1,6 +1,7 @@
 $primary: #132844;
 .baclips{
     background-color: white;position: relative;z-index: 3 !important;
+    
 }
 .container-fluid{background: $primary;height: 100vh;}
 .login-logo{
@@ -10,6 +11,9 @@ $primary: #132844;
 }
 .login-box{
     width: 500px;margin-top: 20vh;
+    @media screen and (max-width: 991px){
+        width: 300px;
+    }
 }
 
 .loadbar{
@@ -22,8 +26,11 @@ $primary: #132844;
         position: relative;
         #moving{position: absolute;transform: translateX(10%) translateY(-7vh);
         animation-name: vote;animation-duration: 2s;animation-iteration-count: infinite;}
-        @media screen and (max-width: 991px) {
-            width: 20%;margin: -5vh auto 0 auto;
+        
+    }
+    @media screen and (max-width: 991px) {
+        div{
+            display: none
         }
     }
 
