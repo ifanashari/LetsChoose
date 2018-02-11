@@ -25,7 +25,7 @@
       <div class="login-box-body">
         <p class="login-box-msg" *ngIf="!status">Selamat Datang {{username}} </p>
         <p class="login-box-msg" *ngIf="status">Selamat Datang {{orang.name}}</p>
-        <p class="login-box-msg">Token akan diberikan oleh panitia pemilu</p>
+        <p class="login-box-msg">Token akan diberikan oleh panitia pemilu {{baseUrl}}</p>
 
         <form method="post" (submit)="matchTok()">
           <div class="form-group has-feedback">
@@ -44,5 +44,5 @@
 </div>
 
 <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-  <img src="{{baseUrl}}" class="img-responsive" alt="Image">
+  <img src="../../assets/image/Kotak.png" class="img-responsive" alt="Image">
 </div>

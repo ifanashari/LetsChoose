@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { navRoute } from './router';
 import { DataService } from './data.service';
@@ -23,10 +23,11 @@ import { RuangComponent } from './ruang/ruang.component';
 import { Profile } from 'selenium-webdriver/firefox';
 import { PemilihanComponent } from './pemilihan/pemilihan.component';
 import { HasilComponent } from './hasil/hasil.component';
-import { AuthGuard } from './auth-guard';
-import { AuthService } from './auth.service';
+import { AuthGuard, AuthGuardAdmin } from './auth-guard';
+import { AuthService, AuthServiceOpenGuards } from './auth.service';
 import { DashHomeComponent } from './dash-home/dash-home.component';
 import { CalonComponent } from './calon/calon.component';
+import { HasilruangComponent } from './hasilruang/hasilruang.component';
 
 let config = new AuthServiceConfig([
   {
@@ -50,17 +51,17 @@ const routes: Routes = []
     PemilihanComponent,
     HasilComponent,
     DashboardComponent,NavigationComponent,MainComponent,LoginComponent,DaftarComponent,
-    BuatComponent,BuatAdminComponent,PortalComponent,RuangComponent, DashHomeComponent, CalonComponent
+    BuatComponent,BuatAdminComponent,PortalComponent,RuangComponent, DashHomeComponent, CalonComponent, HasilruangComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,HttpModule,
     RouterModule.forRoot(navRoute),
     SocialLoginModule,
-    CommonModule
+    CommonModule,ReactiveFormsModule
   ],
   providers: [
-    {provide:DataService , useClass:DataService},AuthGuard,AuthService,
+    {provide:DataService , useClass:DataService},AuthGuard,AuthService,AuthGuardAdmin,AuthServiceOpenGuards,
     {provide: AuthServiceConfig, useFactory: provideConfig},
   ],
   bootstrap: [AppComponent]

@@ -9,8 +9,8 @@ export class DataService {
 
   constructor(private _http:Http) { }
 
-  getAlldata(){
-    return this._http.get("http://localhost:100/LetsApi/select.php")
+  getAlldataPeserta(){
+    return this._http.get("http://localhost:100/LetsApi/selectAll.php")
     .map(res => {
 
       this.checkMe = res;
@@ -56,8 +56,8 @@ export class DataService {
     return this._http.post('http://localhost:100/LetsApi/Admin/addruang.php' , data)
       .map(() => "");
   }
-  showRuang(){
-    return this._http.get('http://localhost:100/LetsApi/Admin/showruang.php')
+  showRuang(id){
+    return this._http.post('http://localhost:100/LetsApi/Admin/showruang.php', {'id':id})
       .map(res =>{
 
         this.checkMe = res;
@@ -93,6 +93,31 @@ export class DataService {
         return res.json();
       }
     })
+  }
+
+  deletedCalon(id){
+    return this._http.post('http://localhost:100/LetsApi/Admin/dCalon.php' , {'id': id})
+    .map(() => this.showCalon(id));
+  }
+
+  deletedRuang(id){
+    return this._http.post('http://localhost:100/LetsApi/Admin/dRuang.php' , {'id': id})
+    .map(() => this.showRuang(id));
+  }
+
+  deletedAdmin(id){
+    return this._http.post('http://localhost:100/LetsApi/Admin/dAdmin.php' , {'id': id})
+      .map(() => "");
+  }
+
+  upPhoto(data , id){
+    return this._http.post('http://localhost:100/LetsApi/Admin/uploadImg.php' , { data ,'id':id})
+      .map(() => "");
+  }
+
+  pemolingan(poling , id){
+    return this._http.post('http://localhost:100/LetsApi/pilih.php' , { poling ,'id':id})
+      .map(() => "");
   }
 
 }

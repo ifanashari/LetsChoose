@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { login } from '../hen-data';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-buat',
@@ -10,8 +11,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./buat.component.scss']
 })
 export class BuatComponent implements OnInit {
+  loggedin:boolean;
+  public logic: string;
 
-  constructor(private datSer:DataService , private route:Router , private tilSer:Title) {
+  constructor(private datSer:DataService , private route:Router , private tilSer:Title , private authSer: AuthService) {
     this.tilSer.setTitle('Login Admin');
    }
   perLog:any;
@@ -23,6 +26,8 @@ export class BuatComponent implements OnInit {
   }
 
   loginAdmin(){
+    this.showLoad();
+
     this.datSer.loginAdmin(this.model.username , this.model.password)
     .subscribe(perLog => {
       this.perLog = perLog;
@@ -31,13 +36,28 @@ export class BuatComponent implements OnInit {
         sessionStorage.setItem('admin' , 'good');
         sessionStorage.setItem('admin-name' , perLog.username);
         sessionStorage.setItem('admin-id' , perLog.id_admin);
-        window.alert("Success Login. Ayo milih");
+        this.authSer.openGadmin();
         this.route.navigate(['/dashboard']);
-      }else{
-        return false;
+      }
+      else if(perLog == "Fname"){
+        this.logic = "Wname";
+        return true;
+      }
+      else if(perLog == "Fpass"){
+        this.logic = "Wpass";
+        return true;
       }
 
     })
   }
+
+  clearOn(){
+    this.logic = "noLog";
+  }
+
+  showLoad(){
+    this.logic = "load";
+  }
+
 
 }

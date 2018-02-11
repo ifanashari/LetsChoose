@@ -1,0 +1,31 @@
+<div class="col-xs-12 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2">
+  <h1>Pilih calon dalam ruangan</h1>
+  <legend></legend>
+  <div class="empty text-center" *ngIf="empty">
+    <i class="fa fa-cogs" aria-hidden="true"></i>
+    <p>
+      Ruang masih kosong
+    </p>
+    <button type="button" class="btn btn-primary" routerLink="/dashboard/tambahruang/">Buat ruang sekarang</button>
+  </div>
+
+  <div class="row" *ngIf="!empty">
+
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let list of ruang; let i = index;">
+      <div class="room" [style.background-color]="getColor(i)" routerLink="/dashboard/hasilCalon/{{list.id_ruang}}">
+        <div class="page-header">
+          <h1>
+            {{list.judul_ruang}}
+            <br>
+            <small>Token: {{list.token_ruang}}</small>
+          </h1>
+        </div>
+        <div style="overflow-y:auto;height:12vh;">
+          <p>{{list.deskripsi}}</p>
+        </div>
+        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+      </div>
+
+    </div>
+
+  </div>

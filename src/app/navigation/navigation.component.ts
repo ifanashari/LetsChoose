@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router/';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-navigation',
@@ -9,8 +11,10 @@ import { Router } from '@angular/router/';
 export class NavigationComponent implements OnInit {
   img = "../../assets/image/logoproject2.png";
   public useradmin:string;
-  constructor(private router: Router) {
+  private id_admin:string;
+  constructor(private router: Router , private dashClass:DashboardComponent , private datSer: DataService) {
     this.useradmin = sessionStorage.getItem('admin-name');
+    this.id_admin = sessionStorage.getItem('admin-id');
   }
 
   ngOnInit() {
@@ -21,12 +25,27 @@ export class NavigationComponent implements OnInit {
     this.router.navigate(['/dashboard']);
   }
 
-  logOut(){
-    sessionStorage.removeItem('admin-name');
-    sessionStorage.removeItem('admin-id');
-    sessionStorage.removeItem('admin');
-    sessionStorage.clear();
-    this.router.navigate(['/loginAdmin']);
+  deleteAdmin(){
+    let warn = confirm("Anda yakin ingin menghapus admin ini? Data akan hilang semua !");
+
+    if (warn == true) {
+      this.datSer.deletedAdmin(this.id_admin).subscribe(() => {
+        sessionStorage.removeItem('admin-id');
+        sessionStorage.removeItem('admin-name');
+        sessionStorage.clear();
+        this.router.navigate(['/loginAdmin']);
+      })
+    } else {
+      return false;
+    }
   }
+
+  changeSt(){
+    this.dashClass.changeSt();
+  }
+  closepop(){
+    this.dashClass.closepop();
+  }
+
 
 }

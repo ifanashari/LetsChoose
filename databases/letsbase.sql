@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03 Feb 2018 pada 05.32
+-- Generation Time: 09 Feb 2018 pada 10.59
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -53,10 +53,11 @@ INSERT INTO `admin` (`id_admin`, `username`, `password`, `email`) VALUES
 CREATE TABLE `calon` (
   `id_calon` varchar(25) NOT NULL,
   `nama_calon` varchar(50) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `riwayat_hidup` text NOT NULL,
+  `deskripsi` longtext NOT NULL,
+  `riwayat_hidup` longtext NOT NULL,
   `poling` int(11) DEFAULT NULL,
   `photo` text NOT NULL,
+  `p_tmp` text NOT NULL,
   `id_ruang` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -64,10 +65,9 @@ CREATE TABLE `calon` (
 -- Dumping data untuk tabel `calon`
 --
 
-INSERT INTO `calon` (`id_calon`, `nama_calon`, `deskripsi`, `riwayat_hidup`, `poling`, `photo`, `id_ruang`) VALUES
-('dKztePhvov3YHbO', 'Bapak Sukirman S.Pd', 'Lorem ipsum', 'lorem ipsum', NULL, '', '4MfPg2cDXMQyTgo'),
-('eICEBtsIZBCPxKc', 'Bapak Prabowo SE', 'Belliau memiliki deskripsi yang panjang', 'Beliau seorang yang hebat', NULL, '', 'Eo6MUmPX5LAXeyl'),
-('N9bGYkmhgSOYOzS', 'Bapak Widodo S.Pd', 'Beliau adalah orang yang akan mencalonkan sebagai walikota', 'Sangat panjang', NULL, '', '4MfPg2cDXMQyTgo');
+INSERT INTO `calon` (`id_calon`, `nama_calon`, `deskripsi`, `riwayat_hidup`, `poling`, `photo`, `p_tmp`, `id_ruang`) VALUES
+('APxOloDzskTtwIx', 'Bapak Widodo S.Pd', 'lorem ipsum', 'lorem ipsum', NULL, '', '', '4MfPg2cDXMQyTgo'),
+('eICEBtsIZBCPxKc', 'Bapak Prabowo SE', 'Belliau memiliki deskripsi yang panjang', 'Beliau seorang yang hebat', NULL, '', '', 'Eo6MUmPX5LAXeyl');
 
 -- --------------------------------------------------------
 
@@ -153,13 +153,13 @@ ALTER TABLE `ruang`
 -- Ketidakleluasaan untuk tabel `calon`
 --
 ALTER TABLE `calon`
-  ADD CONSTRAINT `calon_ibfk_1` FOREIGN KEY (`id_ruang`) REFERENCES `ruang` (`id_ruang`);
+  ADD CONSTRAINT `calon_ibfk_1` FOREIGN KEY (`id_ruang`) REFERENCES `ruang` (`id_ruang`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Ketidakleluasaan untuk tabel `ruang`
 --
 ALTER TABLE `ruang`
-  ADD CONSTRAINT `ruang_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`id_admin`);
+  ADD CONSTRAINT `ruang_ibfk_1` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`id_admin`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
