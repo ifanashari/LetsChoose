@@ -5,14 +5,14 @@ $red: #d9534f;
 .jumbotron{
     height: 100vh;padding: 25vh 0 0 0;background: lighten($primary, 10%);margin: 0;
     .container{
-        p{color: white;}
+        p{color: white;font-size: 24px;text-align: center;}
         #image{width: 100%;height: 200px;}
         #brand{
             color: lighten($primary, 50%);
             small{color: white;}
         }
         .sign{
-            margin: 2vh auto 0 auto;display: flex;align-items: center;
+            margin: 2vh auto 0 auto;display: flex;align-items: center;flex-wrap: wrap;
             h4{
                 width: 250px;margin: auto;color: white;text-align: center;border: thin solid white;padding: 10px;border-radius: 50px;
                 &:active{outline: none;}
@@ -27,6 +27,16 @@ $red: #d9534f;
                 color: $primary;background: white;border-color: $primary;
                 &:hover{border-color: white;/*text-shadow: 1px 1px 1px black;*/background: none;color: white;}
             }
+        }
+    }
+    @media screen and (max-width: 991px) {
+        height: auto;padding: 10vh 0 0 0;
+        .container{
+            p{font-size: 20px;}
+            .sign{
+                h4{font-size: 10px;margin: 5px auto;}
+            }
+            img{width: 300px;margin: auto}
         }
     }
 }
