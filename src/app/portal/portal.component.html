@@ -7,42 +7,43 @@
 </div>
 
 
+<div class="container-fluid">
 
-
-<div class="margintop">
-</div>
-<div class="topup">
-  <p>Powered by Google</p>
-</div>
-<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-  <div class="blaclips">
-    <div class="login-box">
-      <div class="login-logo">
-        <a>
-          <b>Token Ruangan</b>Pemilu !</a>
-      </div>
-      <!-- /.login-logo -->
-      <div class="login-box-body">
-        <p class="login-box-msg" *ngIf="!status">Selamat Datang {{username}} </p>
-        <p class="login-box-msg" *ngIf="status">Selamat Datang {{orang.name}}</p>
-        <p class="login-box-msg">Token akan diberikan oleh panitia pemilu {{baseUrl}}</p>
-
-        <form method="post" (submit)="matchTok()">
-          <div class="form-group has-feedback">
-            <input type="email" class="form-control input-lg" placeholder="Masukkan Token" [(ngModel)]="model.token" name="token">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="blaclips">
+        <div class="login-box">
+          <div class="login-logo">
+            <a>
+              <b>Token Ruangan </b>Pemilu !</a>
           </div>
-          <button type="submit" class="btn btn-info">Masuk Ruangan</button>
-          <button type="button" class="btn btn-danger" (click)="logOutSocial()">Keluar</button>
-        </form>
-        <!-- /.social-auth-links -->
+          <!-- /.login-logo -->
+          <div class="login-box-body">
+            <p class="login-box-msg" *ngIf="!status">Selamat Datang {{username}} </p>
+            <p class="login-box-msg" *ngIf="status">Selamat Datang {{orang.name}}</p>
+            <p class="login-box-msg">Token akan diberikan oleh panitia pemilu {{baseUrl}}</p>
 
+            <form method="post" (submit)="matchTok()">
+              <div class="form-group has-feedback">
+                <input type="email" class="form-control input-lg" placeholder="Masukkan Token" [(ngModel)]="model.token" name="token">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+              </div>
+              <button type="submit" class="btn btn-info">Masuk Ruangan</button>
+              <button type="button" class="btn btn-danger" (click)="logOutSocial()">Keluar</button>
+            </form>
+            <!-- /.social-auth-links -->
+
+          </div>
+          <!-- /.login-box-body -->
+        </div>
       </div>
-      <!-- /.login-box-body -->
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="animate">
+      <div>
+        <img src="../../assets/image/handvote.png" class="img-responsive" id="moving" alt="Image">
+        <img src="../../assets/image/Kotak.png" class="img-responsive" alt="Image">
+      </div>
     </div>
   </div>
-</div>
-
-<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-  <img src="../../assets/image/Kotak.png" class="img-responsive" alt="Image">
 </div>

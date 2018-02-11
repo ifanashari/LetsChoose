@@ -21,7 +21,7 @@ import { HasilruangComponent } from './hasilruang/hasilruang.component';
 export const navRoute:Routes = [
     {path: '' , component: MainComponent},
     {
-        path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuardAdmin],
+        path: 'dashboard', component: DashboardComponent,
         children: [
             {path: '' , component:DashHomeComponent },
             {path: 'tambahruang' , component:RuangComponent },
@@ -39,4 +39,4 @@ export const navRoute:Routes = [
     {path: 'pemilihan' , component:PemilihanComponent , canActivate: [AuthGuard]},
     {path: '**', component: MainComponent }
 ]
-//, canActivate: [AuthGuard]
+//, canActivate: [AuthGuard]canActivate: [AuthGuardAdmin],

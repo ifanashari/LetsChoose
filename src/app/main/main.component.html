@@ -2,13 +2,25 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                <h1 id="brand">Let's
-                    <small>Choose</small>
-                </h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ducimus alias dolorum accusamus enim? Quaerat velit commodi
-                    temporibus maxime, odit omnis ipsa optio magnam aliquam pariatur ipsam asperiores quidem excepturi?
+                <p style="font-size:32px;font-family:cursive;text-align:center;font-weight:bolder;margin-bottom:20px;">
+                    The Future is on your hand !
                 </p>
+                <p style="font-size:24px;text-align:center">
+                    Selamat Datang di Website Pemilihan Online Let's Choose, Disini anda hanya bisa memilih sekali dengan menggunakan email dan
+                    akan bisa login dengan token yang diberikan admin.
+                </p>
+                <p style="text-align:center;margin-top:50px;">Silahkan Login untuk memulai vote !</p>
+                <hr style="width: 60%;">
+                <div class="sign text-center">
+                    <h4 [routerLink]="['login']" id="login">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Login Here
+                    </h4>
+                    <h4 [routerLink]="['loginAdmin']" id="login-admin">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Login Admin Here
+                    </h4>
+                </div>
             </div>
             <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
                 <div id="image">
@@ -18,71 +30,15 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="sign text-center">
-                <h4 [routerLink]="['login']" id="login">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>
-                    Login Here
-                </h4>
-                <h4 [routerLink]="['loginAdmin']" id="login-admin">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>
-                    Login Admin Here
-                </h4>
-                <!-- <button type="button" class="btn btn-info" [routerLink]="['login']">
-                    <h3>
-                        <i class="fa fa-sign-in" aria-hidden="true"></i>
-                        Login Here
-                    </h3>
-                </button> -->
-            </div>
-        </div>
-
     </div>
 </div>
 
-
-<div class="container">
-    <div class="row">
+<div class="row">
+    <div class="container-fluid"  style="padding: 0">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="page-header text-center">
-                <h1>Introduction
-                    <small>Let's choose</small>
-                </h1>
-            </div>
+            <footer>
+                &copy;LetsChoose Crew | Powered by Google
+            </footer>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <div class="intro" id="intro-one">
-                <h1>90%</h1>
-                <h3>Data akurat</h3>
-                <!-- <i class="fa fa-database" aria-hidden="true"></i> -->
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
-            </div>
-        </div>
-
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <div class="intro" id="intro-two">
-                <h1>95%</h1>
-                <h3>Akses cepat</h3>
-                <i class="fa fa-tachometer" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <div class="intro" id="intro-three">
-                <h1>95%</h1>
-                <h3>Mudah</h3>
-                <i class="fa fa-handshake-o" aria-hidden="true"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container-fluid">
-    <footer>
-        <p class="text-center">
-            &copy;LetsChoose Crew | Powered by Google
-        </p>
-    </footer>
 </div>
