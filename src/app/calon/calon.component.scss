@@ -1,7 +1,7 @@
 $base: "../../assets/image/";
 $primary: #132844;
 .calon{
-    padding: 25px;transition: .2s;height: 110vh;box-shadow: 1px 1px 3px gray;margin: 20px 0px;
+    padding: 25px;transition: .2s;height: 120vh;box-shadow: 1px 1px 3px gray;margin: 20px 0px;
     div{
         i{font-size: 150px;transition: .2s;color: #868686}
     }
@@ -13,5 +13,5 @@ $primary: #132844;
     }
 }
 .b-scrol{
-    height: 40vh;overflow-y: auto;overflow-x: hidden;width: 100%;
+    height: 35vh;overflow-y: auto;overflow-x: hidden;width: 100%;margin-bottom: 10px;
 }

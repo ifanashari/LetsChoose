@@ -21,7 +21,7 @@
           <div class="login-box-body">
             <p class="login-box-msg" *ngIf="!status">Selamat Datang {{username}} </p>
             <p class="login-box-msg" *ngIf="status">Selamat Datang {{orang.name}}</p>
-            <p class="login-box-msg">Token akan diberikan oleh panitia pemilu {{baseUrl}}</p>
+            <p class="login-box-msg">Token akan diberikan oleh panitia pemilu</p>
 
             <form method="post" (submit)="matchTok()">
               <div class="form-group has-feedback">

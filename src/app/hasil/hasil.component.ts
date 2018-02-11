@@ -11,8 +11,12 @@ import { ruang, calon } from '../hen-data';
 export class HasilComponent implements OnInit {
   empty:boolean;
   jumlahdatapeserta:number;
-  jumlahpolinh:number;
-  presentasehasilakhir:any;
+  randColor = [
+    '#1153aa', '#11aa1e', '#f13737', '#bc37f1', '#c27510',
+    '#1153aa', '#11aa1e', '#f13737', '#bc37f1', '#c27510',
+    '#1153aa', '#11aa1e', '#f13737', '#bc37f1', '#c27510',
+    '#1153aa', '#11aa1e', '#f13737', '#bc37f1', '#c27510'
+  ];
   constructor(private router: Router , private route: ActivatedRoute , private datSer: DataService) {
 
   }
@@ -21,6 +25,7 @@ export class HasilComponent implements OnInit {
   fileToUpload: File = null;
   ruang = new ruang();
   calon = new calon();
+  total:any;
   cabalon:any;
   ngOnInit() {
     this.getCalon();
@@ -41,14 +46,16 @@ export class HasilComponent implements OnInit {
     })
   }
   getTotalJumlahPeserta(){
-    this.datSer.getAlldataPeserta().subscribe(jumlahdatapeserta => {
+    return this.datSer.getAlldataPeserta().subscribe(jumlahdatapeserta => {
       this.jumlahdatapeserta = jumlahdatapeserta;
     })
   }
-  setPresentase(poling , jumpes){
-    this.presentasehasilakhir = (poling / jumpes * 100);
+
+  getColor(sam) {
+    return this.randColor[sam];
   }
-  presentase():string{
-    return this.presentasehasilakhir+"%";
+  
+  presentase(persen):string{
+    return persen+"%";
   }
 }

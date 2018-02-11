@@ -1,4 +1,4 @@
-$primary: #132844;
+$primary: #af081c;
 .blaclips{
     background-color: white;position: relative;z-index: 3 !important;width: 450px;height: 85vh;
     border-radius: 5px;
@@ -7,7 +7,7 @@ $primary: #132844;
     }
 }
 .topup{
-    background-color: rgba(1, 136, 255, 0.452);position: fixed;width: 100%;height: 100vh;z-index: -1;
+    background-color: $primary;position: fixed;width: 100%;height: 100vh;z-index: -1;
     p{
         position: absolute;bottom: 0;right: 5px;color: rgb(255, 255, 255);
     }
