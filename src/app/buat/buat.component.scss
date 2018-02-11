@@ -1,15 +1,24 @@
-.baclips{
-    background-color: white;position: relative;z-index: 3;margin-top: 23vh;
+$primary: #132844;
+.blaclips{
+    background-color: white;position: relative;z-index: 3 !important;width: 450px;height: 85vh;
+    border-radius: 5px;
+    @media screen and (max-width: 769px) {
+        width: 300px;
+    }
 }
 .topup{
-    background-color: rgba(255, 73, 1, 0.452);position: fixed;width: 100%;height: 100vh;z-index: 2;
+    background-color: rgba(1, 136, 255, 0.452);position: fixed;width: 100%;height: 100vh;z-index: -1;
     p{
         position: absolute;bottom: 0;right: 5px;color: rgb(255, 255, 255);
     }
 }
 .margintop{
-    margin:auto;padding:auto;width: 100%;height: 100vh;position: fixed;background-image: url('../../assets/img/vacbek2.png');
-    background-attachment: fixed;background-size: cover;z-index: 1;
+    margin:auto;padding:auto;width: 100%;height: 100vh;position: fixed;background: lighten($primary, 10%);z-index: -2; 
+}
+.login-logo{
+    a{
+        color: white;
+    }
 }
 .frameart{
     width: 100%;height: 100%;position: fixed;z-index: 4 !important;background-color: rgba(5, 5, 5, 0.829);
@@ -19,9 +28,48 @@
     background-color: white;padding:20px;
     h1{
         color: black;font-size: 30px;
-    }    
+    }
 }
 .loadbar{
     width: 100%;height: 100%;position: fixed;z-index: 4 !important;background-color: rgba(5, 5, 5, 0.929);
     padding-top: 33vh;
+}
+.btn-info{border-radius: 100px !important; width: 100% !important;background-color: lighten($primary, 15%);border:0px;}
+.btn-default{border-radius: 100px !important;background-color: rgb(5, 72, 197)}
+.login-box-body{background: none !important; color: gray !important;}
+.form-control{
+    background: none !important;border: none !important;outline: none !important;color: white;
+    border-bottom: thin solid $primary !important;
+    &:focus{
+        border-bottom: medium solid $primary !important;
+    }
+}
+.form-group{
+    span{color: $primary;}
+    input{color: $primary;}
+    &:hover{
+        span{color: lighten($primary, 15%);}
+    }
+}
+#icon{   
+    padding: 0;display: flex;margin: 10px 0 0 0;
+    .icon-circle{
+        width: 35px;height: 35px;border-radius: 100px;display: flex;align-items: center;margin: auto;
+        .icon{
+            margin: auto;
+            i{color: white;}
+        }
+    }
+    .google{
+        background: #db3236;
+        &:hover{
+            cursor: pointer;background: darken(#db3236, 10%);
+        }
+    }
+    .facebook{
+        background: #3b5998;
+        &:hover{
+            cursor: pointer;background: darken(#3b5998, 10%);
+        }
+    }   
 }

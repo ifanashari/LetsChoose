@@ -1,6 +1,7 @@
 import { NavigationComponent } from './../navigation/navigation.component';
 import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
+import { window } from 'rxjs/operators/window';
 import { Router } from '@angular/router';
 import { CalonComponent } from '../calon/calon.component';
 import { DashHomeComponent } from '../dash-home/dash-home.component';
@@ -21,8 +22,18 @@ export class DashboardComponent implements OnInit {
    }
 
   ngOnInit() {
+    $('.fa-bars').on('click', function(){
+      $('#main-nav').css({'transform':'translateX(0)'});
+      $('.fa-close').css({'display':'block'});
+      $('.fa-bars').css({'display':'none'});
+    });
+    $('.fa-close').on('click', function(){
+      $('#main-nav').css({'transform':'translateX(-100%)'});
+      $('.fa-close').css({'display':'none'});
+      $('.fa-bars').css({'display':'block'});
 
-  }
+  });
+}
 
 
   changeSt(){
@@ -53,3 +64,4 @@ export class DashboardComponent implements OnInit {
 
 
 }
+

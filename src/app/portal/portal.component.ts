@@ -18,12 +18,13 @@ export class PortalComponent implements OnInit {
   orang: SocialUser;
   private loggedin:boolean;
   public logic: string;
-  baseUrl = "../../assets";
+  baseUrl:string;
   status:boolean;
   username:string;
 
   constructor(private authSer: AuthService , private router: Router , private datSer: DataService) { 
     this.username = sessionStorage.getItem('nama');
+    this.baseUrl = "../../assets/";
   }
 
   ruang:any;

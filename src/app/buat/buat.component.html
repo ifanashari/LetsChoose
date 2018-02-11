@@ -19,12 +19,12 @@
 
 <!-- Failpassword -->
 <div class="container frameart" *ngIf="(logic == 'Wpass')">
-<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3 fillart text-center">
-  <h1 style="color: red;">Oops!! Password Kamu Salah</h1>
-  <p>Please Contact your Admin</p>
-  <div style="margin:40px 0;"></div>
-  <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
-</div>
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3 fillart text-center">
+    <h1 style="color: red;">Oops!! Password Kamu Salah</h1>
+    <p>Please Contact your Admin</p>
+    <div style="margin:40px 0;"></div>
+    <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
+  </div>
 </div>
 
 <!-- Failconnect -->
@@ -36,18 +36,17 @@
     <button type="button" class="btn btn-primary" (click)="clearOn()">Back To Login</button>
   </div>
 </div>
-
+<!--
 <div class="margintop">
 </div>
 <div class="topup">
-  <p>Powered by Framework</p>
+  <p>Powered by Google</p>
 </div>
   <div class="container">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 
-    col-lg-offset-3 col-md-offset-3 col-sm-offset-2 baclips">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3 baclips">
       
       <form method="post" role="form" ngNativeValidate (submit)="loginAdmin()">
-        <legend><h1>Login Admin !</h1></legend>
+        <legend><h1 style="color: white">Login Admin !</h1></legend>
   
         <div class="form-group">
           <label for="">Username</label>
@@ -62,12 +61,66 @@
           </div>
           
         <button type="submit" class="btn btn-primary">Login</button>
-        <button type="button" class="btn btn-warning" routerLink="/">Kembali ke Awal</button>
-        <span>Belum punya akun admin <a routerLink="/buatAdmin">Daftar Disini</a></span>
+        <button type="button" class="btn btn-warning" routerLink="/">Back</button>
+        <span>Doesn't have account <a routerLink="/buatAdmin">Sign Up here</a></span>
         
       </form>
       <label></label>
       
     </div>
   </div>
-  
+-->
+<div class="margintop">
+</div>
+<div class="topup">
+  <p>Powered by Google</p>
+</div>
+<div style="height: 7.5vh"></div>
+<div class="container blaclips">
+  <div class="login-box">
+    <div class="login-logo">
+      <a style="color: black">
+        <b>Login </b>Admin
+      </a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+
+      <form method="post" role="form" ngNativeValidate (submit)="loginAdmin()">
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" placeholder="Type your username" [(ngModel)]="model.username" name="username" required>
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          <input type="password" class="form-control" placeholder="Type your password" [(ngModel)]="model.password" name="password"
+            required>
+        </div>
+        <div class="row">
+          <!-- /.col -->
+          <div class="col-xs-12">
+            <input type="submit" class="btn btn-info" value="Sign In">
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-4 
+          col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+      
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" style="margin: 10vh 0 0 0">
+
+        <br>Doesn't have account
+        <a routerLink="/daftarAdmin" class="text-center"> Sign Up here</a>
+        <br>
+        <a routerLink="/">Back</a>
+        <br>
+
+
+      </div>
+
+    </div>
+    <!-- /.login-box-body -->
+  </div>
+</div>

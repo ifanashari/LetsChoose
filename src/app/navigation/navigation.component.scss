@@ -2,12 +2,15 @@ $base: "../../assets/image/";
 $primary: #132844;
 $background: #111111;
 #main-nav{
-    background: lighten($background, 10%);height: 100vh;position: fixed;z-index: 1;padding:0;
+    background: lighten($background, 10%);height: 100vh;position: fixed;z-index: 1;padding:0;transition: .2s;
     img{margin: 1vh 0 0 0;}
     .nav-cont{
         border-left: medium solid rgba($primary, 0);padding: 10px 0 10px 10px;margin: 5px 0;color: lightgray;font-size:15px;
         &:hover{
             background: lighten($background, 20%);border-left: medium solid lighten($primary, 10%);cursor: pointer;
         }
+    }
+    @media screen and (max-width: 991px) {
+        position: fixed;top: 0;overflow-Y: auto;transform: translateX(-100%);
     }
 }
