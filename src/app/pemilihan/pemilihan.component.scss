@@ -21,6 +21,10 @@ body{
 .popup-is{
     width: 500px;height: 300px;margin: 18vh auto;background-color: white;padding: 40px;transform: scale(0 , 0);
     animation-name: force;animation-duration: 0.3s;padding-top: 20px;
+    @media screen and (max-width: 991px) {
+        width: 300px;height: auto;
+        h1{font-size: 20px;}
+    }
 }
 @keyframes force{
     0%{transform: scale(0 ,0); opacity: 0;}

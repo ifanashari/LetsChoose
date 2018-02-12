@@ -35,6 +35,11 @@ $primary: #132844;
     button{
         width: 150px;padding: 20px;font-size: 20px;margin: 20px 6%;
     }
+    @media screen and (max-width: 991px) {
+        width: 300px;height: auto;
+        h1{font-size: 20px;}
+        .btn{width: 100% !important;margin: 5px auto !important;padding: 5px !important;}
+    }
 }
 @keyframes force{
     0%{transform: scale(0 ,0); opacity: 0;}
